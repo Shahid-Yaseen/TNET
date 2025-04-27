@@ -103,13 +103,13 @@ export default function SEOPage() {
         "We develop and optimize high-quality content that satisfies user intent and targets your priority keywords.",
     },
     {
-      title: "06",
+      number: "06",
       title: "Link Building",
       description:
         "We execute strategic link building campaigns to increase your website's authority and improve rankings.",
     },
     {
-      title: "07",
+      number: "07",
       title: "Monitoring & Refinement",
       description: "We continuously monitor your SEO performance and refine our strategy to ensure optimal results.",
     },

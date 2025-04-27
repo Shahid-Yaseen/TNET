@@ -113,14 +113,14 @@ export default function WorkPage() {
 
   // Technologies used
   const technologies = [
-    { name: "React", logo: "/placeholder.svg?height=60&width=60" },
-    { name: "Node.js", logo: "/placeholder.svg?height=60&width=60" },
-    { name: "AWS", logo: "/placeholder.svg?height=60&width=60" },
-    { name: "Microsoft Azure", logo: "/placeholder.svg?height=60&width=60" },
-    { name: "Google Cloud", logo: "/placeholder.svg?height=60&width=60" },
-    { name: "Cisco", logo: "/placeholder.svg?height=60&width=60" },
-    { name: "WordPress", logo: "/placeholder.svg?height=60&width=60" },
-    { name: "Shopify", logo: "/placeholder.svg?height=60&width=60" },
+    { name: "React", logo: "https://upload.wikimedia.org/wikipedia/commons/3/30/React_Logo_SVG.svg" },
+    { name: "Node.js", logo: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" },
+    { name: "AWS", logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
+    { name: "Microsoft Azure", logo: "https://upload.wikimedia.org/wikipedia/commons/3/39/MicrosoftAzure.png" },
+    { name: "Google Cloud", logo: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Google_Cloud_Console_logo.png" },
+    { name: "Cisco", logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg" },
+    { name: "WordPress", logo: "https://upload.wikimedia.org/wikipedia/commons/0/0c/Wordpress_logo_8.png" },
+    { name: "Shopify", logo: "https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg" },
   ]
 
   return (

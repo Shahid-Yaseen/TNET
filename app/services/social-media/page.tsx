@@ -83,34 +83,34 @@ export default function SocialMediaPage() {
   const platforms = [
     {
       name: "Facebook",
-      image: "https://images.unsplash.com/photo-1662947852375-0d45b28ff623?q=80&w=3628&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg",
       description:
         "Reach a broad audience and build community around your brand with the world's largest social network.",
     },
     {
       name: "Instagram",
-      image: "/instagram.svg",
+      image: "https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg",
       description: "Showcase your products and services visually to engage with a younger, image-focused audience.",
     },
     {
       name: "LinkedIn",
-      image: "/linkedin.svg",
+      image: "https://upload.wikimedia.org/wikipedia/commons/7/7e/LinkedIn_PNG16.png",
       description: "Connect with professionals and businesses to establish your brand as an industry leader.",
     },
     {
       name: "Twitter",
-      image: "/twitter.svg",
+      image: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Twitter_X.png",
       description: "Join conversations and share timely updates to stay relevant in fast-paced industries.",
     },
     {
       name: "YouTube",
-      image: "/youtube.svg",
+      image: "https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg",
       description:
         "Share video content to educate, entertain, and engage with your audience on the world's second-largest search engine.",
     },
     {
       name: "TikTok",
-      image: "/tiktok.svg",
+      image: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Tiktok_icon.svg",
       description:
         "Reach younger demographics with creative, short-form video content on this rapidly growing platform.",
     },

@@ -22,7 +22,7 @@ export default function ClientsPage() {
     },
     {
       name: t("secureSystemsLtd"),
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Microsoft_logo_%282022%29.svg/320px-Microsoft_logo_%282022%29.svg.png",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
     },
     {
       name: t("retailInnovations"),
@@ -42,7 +42,7 @@ export default function ClientsPage() {
     },
     {
       name: t("educationSolutions"),
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Cisco_logo.svg/320px-Cisco_logo.svg.png",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg",
     },
   ]
 
