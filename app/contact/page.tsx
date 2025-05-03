@@ -52,29 +52,29 @@ export default function ContactPage() {
 
   // Office locations
   const offices = [
-    {
-      city: "Dubai",
-      address: "Business Bay, Dubai, UAE",
-      phone: "+971 4 123 4567",
-      email: "dubai@tnet.com",
-      hours: "Sunday - Thursday: 9:00 AM - 6:00 PM",
-      image: "https://images.unsplash.com/flagged/photo-1559717865-a99cac1c95d8?q=80&w=3200&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      mapUrl: "https://maps.google.com/?q=Business+Bay+Dubai+UAE",
-    },
-    {
-      city: "Abu Dhabi",
-      address: "Corniche Road, Abu Dhabi, UAE",
-      phone: "+971 2 123 4567",
-      email: "abudhabi@tnet.com",
-      hours: "Sunday - Thursday: 9:00 AM - 6:00 PM",
-      image: "https://images.unsplash.com/photo-1636110911594-84ef8a6b0a9d?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      mapUrl: "https://maps.google.com/?q=Corniche+Road+Abu+Dhabi+UAE",
-    },
+    // {
+    //   city: "Dubai",
+    //   address: "Business Bay, Dubai, UAE",
+    //   phone: "+971 4 123 4567",
+    //   email: "dubai@tnet.com",
+    //   hours: "Sunday - Thursday: 9:00 AM - 6:00 PM",
+    //   image: "https://images.unsplash.com/flagged/photo-1559717865-a99cac1c95d8?q=80&w=3200&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    //   mapUrl: "https://maps.google.com/?q=Business+Bay+Dubai+UAE",
+    // },
+    // {
+    //   city: "Abu Dhabi",
+    //   address: "Corniche Road, Abu Dhabi, UAE",
+    //   phone: "+971 2 123 4567",
+    //   email: "abudhabi@tnet.com",
+    //   hours: "Sunday - Thursday: 9:00 AM - 6:00 PM",
+    //   image: "https://images.unsplash.com/photo-1636110911594-84ef8a6b0a9d?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    //   mapUrl: "https://maps.google.com/?q=Corniche+Road+Abu+Dhabi+UAE",
+    // },
     {
       city: "Sharjah",
-      address: "Al Khan, Sharjah, UAE",
-      phone: "+971 6 123 4567",
-      email: "sharjah@tnet.com",
+      address: "Research Technology and Innovation Park",
+      phone: "+1 (351) 227-2277",
+      email: "infotechtnet@gmail.com",
       hours: "Sunday - Thursday: 9:00 AM - 6:00 PM",
       image: "https://images.unsplash.com/photo-1637987897990-e660edd0af44?q=80&w=3432&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       mapUrl: "https://maps.google.com/?q=Al+Khan+Sharjah+UAE",
@@ -110,24 +110,26 @@ export default function ContactPage() {
     {
       name: "Facebook",
       icon: <Facebook className="h-5 w-5" />,
-      url: "https://facebook.com/tnet",
+      url: "https://www.facebook.com/tnet.ae",
     },
     {
       name: "Twitter",
       icon: <Twitter className="h-5 w-5" />,
-      url: "https://twitter.com/tnet",
+      url: "https://x.com/tnetinfotech",
     },
     {
       name: "Instagram",
       icon: <Instagram className="h-5 w-5" />,
-      url: "https://instagram.com/tnet",
+      url: "https://www.instagram.com/tnet.ae/#",
     },
-    {
-      name: "LinkedIn",
-      icon: <Linkedin className="h-5 w-5" />,
-      url: "https://linkedin.com/company/tnet",
-    },
+    // {
+    //   name: "LinkedIn",
+    //   icon: <Linkedin className="h-5 w-5" />,
+    //   url: "https://linkedin.com/company/tnet",
+    // },
   ]
+
+
 
   return (
     <main className="flex-1" dir={direction}>
@@ -400,8 +402,9 @@ export default function ContactPage() {
             <div>
               <h4 className="font-medium text-red-100">Phone</h4>
               <Link href="tel:+97141234567" className="hover:underline">
-                <p>Main: +971 4 123 4567</p>
-                <p>Support: +971 4 123 4568</p>
+                <p>Main: +1 (351) 227-2277
+                </p>
+                {/* <p>Support: +971 4 123 4568</p> */}
               </Link>
             </div>
           </motion.div>
@@ -419,9 +422,9 @@ export default function ContactPage() {
             <div>
               <h4 className="font-medium text-red-100">Email</h4>
               <Link href="mailto:info@tnet.com" className="hover:underline">
-                <p>General: info@tnet.com</p>
-                <p>Support: support@tnet.com</p>
-                <p>Sales: sales@tnet.com</p>
+                <p>General: infotechtnet@gmail.com                </p>
+                {/* <p>Support: support@tnet.com</p>
+                <p>Sales: sales@tnet.com</p> */}
               </Link>
             </div>
           </motion.div>
@@ -439,7 +442,7 @@ export default function ContactPage() {
             <div>
               <h4 className="font-medium text-red-100">Headquarters</h4>
               <Link href="https://maps.google.com" className="hover:underline">
-                Business Bay, Dubai, UAE
+              United Arab Emirates Sharjah Sharjah Research Technology and Innovation Park
               </Link>
             </div>
           </motion.div>

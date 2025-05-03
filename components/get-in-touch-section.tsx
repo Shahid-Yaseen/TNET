@@ -14,21 +14,21 @@ export default function GetInTouchSection() {
   const contactInfo = [
     {
       icon: <Mail className="h-5 w-5" />,
-      title: t("email"),
-      value: "info@tnet.com",
-      link: "mailto:info@tnet.com",
+      // title: t("email"),
+      value: "infotechtnet@gmail.com",
+      link: "infotechtnet@gmail.com",
     },
     {
       icon: <Phone className="h-5 w-5" />,
-      title: t("phone"),
-      value: direction === "rtl" ? "(١٢٣) ٤٥٦-٧٨٩٠" : "(123) 456-7890",
-      link: "tel:+1234567890",
+      //  title: t("phone"),
+      value: t("phone"),
+       link: "tel:+1 (351) 227-2277",
     },
     {
       icon: <MapPin className="h-5 w-5" />,
-      title: t("address"),
+      // title: t("address"),
       value:
-        direction === "rtl" ? "١٢٣ شارع التكنولوجيا، مدينة الابتكار، ١٢٣٤٥" : "123 Tech Street, Innovation City, 12345",
+      t("address"),
       link: "https://maps.google.com",
     },
   ]
@@ -37,23 +37,23 @@ export default function GetInTouchSection() {
     {
       icon: <Facebook className="h-5 w-5" />,
       name: "Facebook",
-      href: "#",
+      href: "https://www.facebook.com/tnet.ae",
     },
     {
       icon: <Twitter className="h-5 w-5" />,
       name: "Twitter",
-      href: "#",
+      href: "https://x.com/tnetinfotech",
     },
     {
       icon: <Instagram className="h-5 w-5" />,
       name: "Instagram",
-      href: "#",
+      href: "https://www.instagram.com/tnet.ae/#",
     },
-    {
-      icon: <Linkedin className="h-5 w-5" />,
-      name: "LinkedIn",
-      href: "#",
-    },
+    // {
+    //   icon: <Linkedin className="h-5 w-5" />,
+    //   name: "LinkedIn",
+    //   href: "#",
+    // },
   ]
 
   return (
