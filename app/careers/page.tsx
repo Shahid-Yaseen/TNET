@@ -1,10 +1,11 @@
+
 "use client"
 
 import { useState } from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
-import { ChevronRight, ArrowRight, Search, Heart, Clock, Coffee, Globe, Award, Users } from "lucide-react"
+import { ChevronRight, ArrowRight, Search, Heart, Clock, Coffee, Globe, Award, Users } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { useLanguage } from "@/contexts/language-context"
@@ -17,27 +18,23 @@ export default function CareersPage() {
   const values = [
     {
       icon: <Users className="h-6 w-6 text-brand-600" />,
-      title: "Collaboration",
-      description:
-        "We believe in the power of teamwork and collaboration. Together, we can achieve more than we ever could individually.",
+      title: t("valueCollaboration"),
+      description: t("valueCollaborationDesc"),
     },
     {
       icon: <Award className="h-6 w-6 text-brand-600" />,
-      title: "Excellence",
-      description:
-        "We strive for excellence in everything we do, from the solutions we deliver to the way we interact with our clients and each other.",
+      title: t("valueExcellence"),
+      description: t("valueExcellenceDesc"),
     },
     {
       icon: <Globe className="h-6 w-6 text-brand-600" />,
-      title: "Innovation",
-      description:
-        "We embrace new technologies and ideas, constantly seeking innovative ways to improve our solutions and services.",
+      title: t("valueInnovation"),
+      description: t("valueInnovationDesc"),
     },
     {
       icon: <Heart className="h-6 w-6 text-brand-600" />,
-      title: "Integrity",
-      description:
-        "We conduct our business with the highest ethical standards, building trust through transparency and honesty.",
+      title: t("valueIntegrity"),
+      description: t("valueIntegrityDesc"),
     },
   ]
 
@@ -45,26 +42,23 @@ export default function CareersPage() {
   const benefits = [
     {
       icon: <Award className="h-6 w-6 text-white" />,
-      title: "Competitive Salary",
-      description:
-        "We offer competitive compensation packages that recognize your skills, experience, and contributions.",
+      title: t("careersCompetitiveSalary"),
+      description: t("careersSalaryDescription"),
     },
     {
       icon: <Heart className="h-6 w-6 text-white" />,
-      title: "Health Benefits",
-      description:
-        "Comprehensive health insurance coverage for you and your family, including medical, dental, and vision.",
+      title: t("careersHealthBenefits"),
+      description: t("careersHealthDescription"),
     },
     {
       icon: <Clock className="h-6 w-6 text-white" />,
-      title: "Flexible Work",
-      description: "Flexible working hours and remote work options to help you maintain a healthy work-life balance.",
+      title: t("careersFlexibleWork"),
+      description: t("careersFlexibleDescription"),
     },
     {
       icon: <Coffee className="h-6 w-6 text-white" />,
-      title: "Professional Development",
-      description:
-        "Continuous learning opportunities, including training programs, certifications, and conference attendance.",
+      title: t("careersProfessionalDev"),
+      description: t("careersProfessionalDevDescription"),
     },
   ]
 
@@ -245,21 +239,22 @@ export default function CareersPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">Join Our Team</h1>
+            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
+              {t("careersJoinTeam")}
+            </h1>
             <p className="text-blue-100 md:text-xl/relaxed">
-              Build your career at TNET and be part of a team that's passionate about innovation, excellence, and making
-              a difference through technology.
+              {t("careersBuildCareer")}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 pt-4 justify-center">
               <Link href="#openings">
                 <Button size="lg" className="bg-white text-brand-700 hover:bg-blue-50">
-                  View Open Positions
+                  {t("careersViewPositions")}
                   <ChevronRight className={`${direction === "rtl" ? "mr-2 rotate-180" : "ml-2"} h-4 w-4`} />
                 </Button>
               </Link>
               <Link href="#culture">
                 <Button variant="outline" size="lg" className="border-white text-brand-700 hover:bg-white/10">
-                  Our Culture
+                  {t("careersOurCulture")}
                 </Button>
               </Link>
             </div>
@@ -278,24 +273,22 @@ export default function CareersPage() {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <div className="inline-block rounded-lg bg-brand-100 px-3 py-1 text-sm text-brand-800">Why Join TNET</div>
+              <div className="inline-block rounded-lg bg-brand-100 px-3 py-1 text-sm text-brand-800">
+                {t("careersWhyJoin")}
+              </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-slate-900">
-                A Culture of Innovation and Growth
+                {t("careersCultureInnovation")}
               </h2>
               <p className="text-slate-600 md:text-lg">
-                At TNET, we believe that our people are our greatest asset. We foster a culture that values innovation,
-                collaboration, and continuous learning, providing an environment where you can grow both professionally
-                and personally.
+                {t("careersPeopleAsset")}
               </p>
               <p className="text-slate-600 md:text-lg">
-                We're committed to creating a diverse and inclusive workplace where everyone feels valued and empowered
-                to contribute their unique perspectives and talents. Join us and be part of a team that's passionate
-                about making a difference through technology.
+                {t("careersDiverseInclusive")}
               </p>
               <div className="pt-4">
                 <Link href="#openings">
                   <Button className="bg-brand-600 hover:bg-brand-700">
-                    Explore Opportunities
+                    {t("careersExploreOpportunities")}
                     <ChevronRight className={`${direction === "rtl" ? "mr-2 rotate-180" : "ml-2"} h-4 w-4`} />
                   </Button>
                 </Link>
@@ -331,13 +324,14 @@ export default function CareersPage() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <div className="inline-block rounded-lg bg-brand-100 px-3 py-1 text-sm text-brand-800 mb-4">Our Values</div>
+            <div className="inline-block rounded-lg bg-brand-100 px-3 py-1 text-sm text-brand-800 mb-4">
+              {t("careersOurValues")}
+            </div>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-slate-900">
-              What Drives Us
+              {t("careersWhatDrivesUs")}
             </h2>
             <p className="mt-4 text-slate-600 md:text-xl/relaxed">
-              Our core values shape everything we do, from how we develop solutions to how we interact with our clients
-              and each other.
+              {t("careersValuesDescription")}
             </p>
           </motion.div>
 
@@ -374,11 +368,13 @@ export default function CareersPage() {
             viewport={{ once: true }}
           >
             <div className="inline-block rounded-lg bg-white/10 backdrop-blur-sm px-3 py-1 text-sm text-white mb-4">
-              Benefits & Perks
+              {t("careersBenefitsPerks")}
             </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">What We Offer</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              {t("careersWhatWeOffer")}
+            </h2>
             <p className="mt-4 text-blue-100 md:text-xl/relaxed">
-              We believe in taking care of our team members with competitive benefits and a supportive work environment.
+              {t("careersTakingCare")}
             </p>
           </motion.div>
 
@@ -410,23 +406,23 @@ export default function CareersPage() {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-xl font-bold text-white mb-4">Additional Benefits</h3>
+              <h3 className="text-xl font-bold text-white mb-4">{t("careersAdditionalBenefits")}</h3>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <ChevronRight className="h-5 w-5 text-teal-300 flex-shrink-0 mt-0.5" />
-                  <span>Annual performance bonuses</span>
+                  <span>{t("careersPerformanceBonus")}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <ChevronRight className="h-5 w-5 text-teal-300 flex-shrink-0 mt-0.5" />
-                  <span>Paid time off and holidays</span>
+                  <span>{t("careersPaidTimeOff")}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <ChevronRight className="h-5 w-5 text-teal-300 flex-shrink-0 mt-0.5" />
-                  <span>Retirement savings plan</span>
+                  <span>{t("careersRetirementPlan")}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <ChevronRight className="h-5 w-5 text-teal-300 flex-shrink-0 mt-0.5" />
-                  <span>Wellness programs</span>
+                  <span>{t("careersWellnessPrograms")}</span>
                 </li>
               </ul>
             </motion.div>
@@ -437,23 +433,23 @@ export default function CareersPage() {
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-xl font-bold text-white mb-4">Work Environment</h3>
+              <h3 className="text-xl font-bold text-white mb-4">{t("careersWorkEnvironment")}</h3>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <ChevronRight className="h-5 w-5 text-teal-300 flex-shrink-0 mt-0.5" />
-                  <span>Modern, collaborative workspace</span>
+                  <span>{t("careersModernWorkspace")}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <ChevronRight className="h-5 w-5 text-teal-300 flex-shrink-0 mt-0.5" />
-                  <span>Regular team building activities</span>
+                  <span>{t("careersTeamBuilding")}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <ChevronRight className="h-5 w-5 text-teal-300 flex-shrink-0 mt-0.5" />
-                  <span>Casual dress code</span>
+                  <span>{t("careersDressCode")}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <ChevronRight className="h-5 w-5 text-teal-300 flex-shrink-0 mt-0.5" />
-                  <span>Free snacks and beverages</span>
+                  <span>{t("careersSnacksBeverages")}</span>
                 </li>
               </ul>
             </motion.div>
@@ -472,13 +468,13 @@ export default function CareersPage() {
             viewport={{ once: true }}
           >
             <div className="inline-block rounded-lg bg-brand-100 px-3 py-1 text-sm text-brand-800 mb-4">
-              Employee Stories
+              {t("careersEmployeeStories")}
             </div>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-slate-900">
-              Hear From Our Team
+              {t("careersHearFromTeam")}
             </h2>
             <p className="mt-4 text-slate-600 md:text-xl/relaxed">
-              Our employees share their experiences working at TNET and what makes it a special place to build a career.
+              {t("careersEmployeeExperiences")}
             </p>
           </motion.div>
 
@@ -528,13 +524,13 @@ export default function CareersPage() {
             viewport={{ once: true }}
           >
             <div className="inline-block rounded-lg bg-brand-100 px-3 py-1 text-sm text-brand-800 mb-4">
-              Open Positions
+              {t("careersOpenPositions")}
             </div>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-slate-900">
-              Current Opportunities
+              {t("careersCurrentOpportunities")}
             </h2>
             <p className="mt-4 text-slate-600 md:text-xl/relaxed">
-              Explore our current job openings and find the perfect role to match your skills and career goals.
+              {t("careersExploreOpenings")}
             </p>
           </motion.div>
 
@@ -544,7 +540,7 @@ export default function CareersPage() {
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400" />
               <Input
                 type="text"
-                placeholder="Search by job title, department, or location"
+                placeholder={t("careersSearchJobs")}
                 className="pl-10 py-6 text-base"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -582,14 +578,14 @@ export default function CareersPage() {
                     </div>
                     <Link href={job.link} className="mt-4 md:mt-0">
                       <Button className="bg-brand-600 hover:bg-brand-700">
-                        Apply Now
+                        {t("careersApplyNow")}
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
                     </Link>
                   </div>
                   <p className="text-slate-600 mb-4">{job.description}</p>
                   <div>
-                    <h4 className="font-semibold text-slate-900 mb-2">Key Requirements:</h4>
+                    <h4 className="font-semibold text-slate-900 mb-2">{t("careersKeyRequirements")}</h4>
                     <ul className="space-y-1">
                       {job.requirements.map((req, index) => (
                         <li key={index} className="flex items-start gap-2">
@@ -601,7 +597,7 @@ export default function CareersPage() {
                   </div>
                   <div className="mt-4 text-right">
                     <Link href={job.link} className="text-brand-600 font-medium hover:underline">
-                      View Full Job Description
+                      {t("careersViewFullJob")}
                     </Link>
                   </div>
                 </motion.div>
@@ -609,10 +605,10 @@ export default function CareersPage() {
             ) : (
               <div className="text-center py-12">
                 <p className="text-slate-600 text-lg">
-                  No job openings match your search criteria. Please try a different search term.
+                  {t("careersNoJobsMatch")}
                 </p>
                 <Button className="mt-4 bg-brand-600 hover:bg-brand-700" onClick={() => setSearchTerm("")}>
-                  View All Openings
+                  {t("careersViewAllOpenings")}
                 </Button>
               </div>
             )}
@@ -648,12 +644,11 @@ export default function CareersPage() {
               viewport={{ once: true }}
             >
               <div className="inline-block rounded-lg bg-brand-100 px-3 py-1 text-sm text-brand-800">
-                Application Process
+                {t("careersApplicationProcess")}
               </div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-slate-900">How to Join Our Team</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-slate-900">{t("careersHowToJoin")}</h2>
               <p className="text-slate-600 md:text-lg">
-                Our hiring process is designed to be transparent, efficient, and focused on finding the right fit for
-                both you and TNET. Here's what you can expect when you apply to join our team.
+                {t("careersProcessDescription")}
               </p>
               <div className="space-y-4 mt-6">
                 <div className="flex items-start gap-4">
@@ -661,10 +656,9 @@ export default function CareersPage() {
                     1
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-900">Application Review</h3>
+                    <h3 className="font-bold text-slate-900">{t("careersStep1Title")}</h3>
                     <p className="text-slate-600">
-                      Our recruitment team reviews your application and resume to assess your qualifications and
-                      experience.
+                      {t("careersStep1Description")}
                     </p>
                   </div>
                 </div>
@@ -673,10 +667,9 @@ export default function CareersPage() {
                     2
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-900">Initial Interview</h3>
+                    <h3 className="font-bold text-slate-900">{t("careersStep2Title")}</h3>
                     <p className="text-slate-600">
-                      If your profile matches our requirements, we'll schedule an initial interview to get to know you
-                      better.
+                      {t("careersStep2Description")}
                     </p>
                   </div>
                 </div>
@@ -685,10 +678,9 @@ export default function CareersPage() {
                     3
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-900">Technical Assessment</h3>
+                    <h3 className="font-bold text-slate-900">{t("careersStep3Title")}</h3>
                     <p className="text-slate-600">
-                      Depending on the role, you may be asked to complete a technical assessment or case study to
-                      demonstrate your skills.
+                      {t("careersStep3Description")}
                     </p>
                   </div>
                 </div>
@@ -697,10 +689,9 @@ export default function CareersPage() {
                     4
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-900">Final Interview</h3>
+                    <h3 className="font-bold text-slate-900">{t("careersStep4Title")}</h3>
                     <p className="text-slate-600">
-                      Meet with the hiring manager and team members to discuss the role in detail and ensure it's a good
-                      fit for both parties.
+                      {t("careersStep4Description")}
                     </p>
                   </div>
                 </div>
@@ -709,10 +700,9 @@ export default function CareersPage() {
                     5
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-900">Offer & Onboarding</h3>
+                    <h3 className="font-bold text-slate-900">{t("careersStep5Title")}</h3>
                     <p className="text-slate-600">
-                      If successful, you'll receive an offer and begin our comprehensive onboarding process to set you
-                      up for success.
+                      {t("careersStep5Description")}
                     </p>
                   </div>
                 </div>
@@ -733,18 +723,17 @@ export default function CareersPage() {
             viewport={{ once: true }}
           >
             <div className="inline-block rounded-lg bg-brand-100 px-3 py-1 text-sm text-brand-800 mb-4">
-              Don't See a Match?
+              {t("careersDontSeeMatch")}
             </div>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-slate-900 mb-4">
-              We're Always Looking for Talent
+              {t("careersAlwaysLookingTalent")}
             </h2>
             <p className="text-slate-600 md:text-xl/relaxed mb-8">
-              If you don't see a position that matches your skills and experience, but you're passionate about
-              technology and believe you could be a valuable addition to our team, we'd still love to hear from you.
+              {t("careersNoPositionMatch")}
             </p>
             <Link href="/contact">
               <Button size="lg" className="bg-brand-600 hover:bg-brand-700">
-                Submit Your Resume
+                {t("careersSubmitResume")}
                 <ChevronRight className={`${direction === "rtl" ? "mr-2 rotate-180" : "ml-2"} h-4 w-4`} />
               </Button>
             </Link>
@@ -763,16 +752,15 @@ export default function CareersPage() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              Ready to Take the Next Step in Your Career?
+              {t("careersReadyNextStep")}
             </h2>
             <p className="text-blue-100 md:text-xl/relaxed">
-              Join our team of passionate professionals and be part of a company that values innovation, growth, and
-              making a difference through technology.
+              {t("careersJoinPassionate")}
             </p>
             <div className="pt-6">
               <Link href="#openings">
                 <Button size="lg" className="bg-white text-brand-700 hover:bg-blue-50">
-                  View Open Positions
+                  {t("careersViewPositions")}
                   <ChevronRight className={`${direction === "rtl" ? "mr-2 rotate-180" : "ml-2"} h-4 w-4`} />
                 </Button>
               </Link>

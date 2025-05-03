@@ -108,13 +108,13 @@ export default function Header() {
           </Link>
         </nav>
         <div className="hidden md:flex items-center gap-2">
-          <LanguageSwitcher />
+          {/* <LanguageSwitcher /> */}
           <Link href="/contact">
             <Button className="bg-red-600 hover:bg-red-700">{t("getInTouch")}</Button>
           </Link>
         </div>
         <div className="flex items-center md:hidden">
-          <LanguageSwitcher />
+          {/* <LanguageSwitcher /> */}
           <button className="ml-2" onClick={toggleMenu}>
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>

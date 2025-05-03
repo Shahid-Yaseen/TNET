@@ -156,9 +156,9 @@ const enTranslations: Record<string, string> = {
   allRightsReserved: "All rights reserved.",
   footerDescription:
     "Innovative technology solutions for modern businesses. We help organizations leverage technology to achieve their goals.",
-  address: "123 Tech Street, Innovation City, 12345",
-  phone: "(123) 456-7890",
-  email: "info@tnet.com",
+  address: "United Arab Emirates Sharjah Sharjah Research Technology and innovation park – UAE Block C VL05-153",
+  phone: "+1 (351) 227-2277",
+  email: "infotechtnet@gmail.com",
 
   // Language
   english: "English",
@@ -511,9 +511,9 @@ const enTranslations: Record<string, string> = {
     "Contact us today to discuss how we can help you achieve your technology goals and create a solution tailored to your specific needs.",
   letsDiscussProject: "Let's Discuss Your Project",
   allProjects: "All Projects",
-  webDesign: "Web Design",
+  // webDesign: "Web Design",
   itInfrastructure: "IT Infrastructure",
-  security: "Security",
+ // security: "Security",
   digitalMarketing: "Digital Marketing",
   healthcareWebsiteRedesignTitle: "Healthcare Provider Website Redesign",
   healthcareWebsiteRedesignDescription:
@@ -631,6 +631,96 @@ const enTranslations: Record<string, string> = {
   professionalServicesDesc:
     "Providing professional service firms with the digital tools and strategies they need to showcase their expertise and attract clients.",
   itConsulting: "IT Consulting",
+
+  careersJoinTeam: "Join Our Team",
+  careersBuildCareer: "Build your career at TNET and be part of a team that's passionate about innovation, excellence, and making a difference through technology.",
+  careersViewPositions: "View Open Positions",
+  careersOurCulture: "Our Culture",
+  
+  // Why Join Us Section
+  careersWhyJoin: "Why Join TNET",
+  careersCultureInnovation: "A Culture of Innovation and Growth",
+  careersPeopleAsset: "At TNET, we believe that our people are our greatest asset. We foster a culture that values innovation, collaboration, and continuous learning, providing an environment where you can grow both professionally and personally.",
+  careersDiverseInclusive: "We're committed to creating a diverse and inclusive workplace where everyone feels valued and empowered to contribute their unique perspectives and talents. Join us and be part of a team that's passionate about making a difference through technology.",
+  careersExploreOpportunities: "Explore Opportunities",
+  
+  // Values Section
+  careersOurValues: "Our Values",
+  careersWhatDrivesUs: "What Drives Us",
+  careersValuesDescription: "Our core values shape everything we do, from how we develop solutions to how we interact with our clients and each other.",
+  
+  // Values (these are already in the existing translations, so we'll use those)
+  
+  // Benefits Section
+  careersBenefitsPerks: "Benefits & Perks",
+  careersWhatWeOffer: "What We Offer",
+  careersTakingCare: "We believe in taking care of our team members with competitive benefits and a supportive work environment.",
+  
+  // Benefits
+  careersCompetitiveSalary: "Competitive Salary",
+  careersSalaryDescription: "We offer competitive compensation packages that recognize your skills, experience, and contributions.",
+  careersHealthBenefits: "Health Benefits",
+  careersHealthDescription: "Comprehensive health insurance coverage for you and your family, including medical, dental, and vision.",
+  careersFlexibleWork: "Flexible Work",
+  careersFlexibleDescription: "Flexible working hours and remote work options to help you maintain a healthy work-life balance.",
+  careersProfessionalDev: "Professional Development",
+  careersProfessionalDevDescription: "Continuous learning opportunities, including training programs, certifications, and conference attendance.",
+  
+  // Additional Benefits
+  careersAdditionalBenefits: "Additional Benefits",
+  careersPerformanceBonus: "Annual performance bonuses",
+  careersPaidTimeOff: "Paid time off and holidays",
+  careersRetirementPlan: "Retirement savings plan",
+  careersWellnessPrograms: "Wellness programs",
+  
+  // Work Environment
+  careersWorkEnvironment: "Work Environment",
+  careersModernWorkspace: "Modern, collaborative workspace",
+  careersTeamBuilding: "Regular team building activities",
+  careersDressCode: "Casual dress code",
+  careersSnacksBeverages: "Free snacks and beverages",
+  
+  // Employee Stories
+  careersEmployeeStories: "Employee Stories",
+  careersHearFromTeam: "Hear From Our Team",
+  careersEmployeeExperiences: "Our employees share their experiences working at TNET and what makes it a special place to build a career.",
+  
+  // Job Openings
+  careersOpenPositions: "Open Positions",
+  careersCurrentOpportunities: "Current Opportunities",
+  careersExploreOpenings: "Explore our current job openings and find the perfect role to match your skills and career goals.",
+  careersSearchJobs: "Search by job title, department, or location",
+  careersApplyNow: "Apply Now",
+  careersKeyRequirements: "Key Requirements:",
+  careersViewFullJob: "View Full Job Description",
+  careersNoJobsMatch: "No job openings match your search criteria. Please try a different search term.",
+  careersViewAllOpenings: "View All Openings",
+  
+  // Application Process
+  careersApplicationProcess: "Application Process",
+  careersHowToJoin: "How to Join Our Team",
+  careersProcessDescription: "Our hiring process is designed to be transparent, efficient, and focused on finding the right fit for both you and TNET. Here's what you can expect when you apply to join our team.",
+  careersStep1Title: "Application Review",
+  careersStep1Description: "Our recruitment team reviews your application and resume to assess your qualifications and experience.",
+  careersStep2Title: "Initial Interview",
+  careersStep2Description: "If your profile matches our requirements, we'll schedule an initial interview to get to know you better.",
+  careersStep3Title: "Technical Assessment",
+  careersStep3Description: "Depending on the role, you may be asked to complete a technical assessment or case study to demonstrate your skills.",
+  careersStep4Title: "Final Interview",
+  careersStep4Description: "Meet with the hiring manager and team members to discuss the role in detail and ensure it's a good fit for both parties.",
+  careersStep5Title: "Offer & Onboarding",
+  careersStep5Description: "If successful, you'll receive an offer and begin our comprehensive onboarding process to set you up for success.",
+  
+  // No Suitable Positions
+  careersDontSeeMatch: "Don't See a Match?",
+  careersAlwaysLookingTalent: "We're Always Looking for Talent",
+  careersNoPositionMatch: "If you don't see a position that matches your skills and experience, but you're passionate about technology and believe you could be a valuable addition to our team, we'd still love to hear from you.",
+  careersSubmitResume: "Submit Your Resume",
+  
+  // CTA Section
+  careersReadyNextStep: "Ready to Take the Next Step in Your Career?",
+  careersJoinPassionate: "Join our team of passionate professionals and be part of a company that values innovation, growth, and making a difference through technology."
+  
 }
 
 // Arabic translations
@@ -772,9 +862,9 @@ const arTranslations: Record<string, string> = {
   allRightsReserved: "جميع الحقوق محفوظة.",
   footerDescription:
     "حلول تكنولوجية مبتكرة للشركات الحديثة. نساعد المؤسسات على الاستفادة من التكنولوجيا لتحقيق أهدافها.",
-  address: "١٢٣ شارع التكنولوجيا، مدينة الابتكار، ١٢٣٤٥",
-  phone: "(١٢٣) ٤٥٦-٧٨٩٠",
-  email: "info@tnet.com",
+  address: "الإمارات العربية المتحدة الشارقة منتزه الشارقة للأبحاث والتكنولوجيا والابتكار - الإمارات العربية المتحدة المبنى C VL05-153",
+  phone: "+١ (٣٥١) ٢٢٧-٢٢٧٧",
+  email: "infotechtnet@gmail.com",
 
   // Language
   english: "English",
@@ -1212,7 +1302,93 @@ const arTranslations: Record<string, string> = {
   professionalServicesDesc:
     "تزويد شركات الخدمات المهنية بالأدوات والاستراتيجيات الرقمية التي تحتاجها لعرض خبراتها وجذب العملاء.",
   itConsulting: "استشارات تكنولوجيا المعلومات",
-}
+  // Hero Section
+  careersJoinTeam: "انضم إلى فريقنا",
+  careersBuildCareer: "ابنِ مسيرتك المهنية في TNET وكن جزءًا من فريق شغوف بالابتكار والتميز وإحداث فرق من خلال التكنولوجيا.",
+  careersViewPositions: "عرض الوظائف المتاحة",
+  careersOurCulture: "ثقافتنا",
+  
+  // Why Join Us Section
+  careersWhyJoin: "لماذا تنضم إلى TNET",
+  careersCultureInnovation: "ثقافة الابتكار والنمو",
+  careersPeopleAsset: "في TNET، نؤمن بأن موظفينا هم أهم أصولنا. نحن نعزز ثقافة تقدر الابتكار والتعاون والتعلم المستمر، مما يوفر بيئة يمكنك فيها النمو مهنيًا وشخصيًا.",
+  careersDiverseInclusive: "نحن ملتزمون بخلق مكان عمل متنوع وشامل حيث يشعر الجميع بالتقدير والتمكين للمساهمة بوجهات نظرهم ومواهبهم الفريدة. انضم إلينا وكن جزءًا من فريق شغوف بإحداث فرق من خلال التكنولوجيا.",
+  careersExploreOpportunities: "استكشف الفرص",
+  
+  // Values Section
+  careersOurValues: "قيمنا",
+  careersWhatDrivesUs: "ما يدفعنا",
+  careersValuesDescription: "تشكل قيمنا الأساسية كل ما نقوم به، من كيفية تطوير الحلول إلى كيفية تفاعلنا مع عملائنا وبعضنا البعض.",
+  
+  // Benefits Section
+  careersBenefitsPerks: "المزايا والمكافآت",
+  careersWhatWeOffer: "ما نقدمه",
+  careersTakingCare: "نحن نؤمن بالاهتمام بأعضاء فريقنا من خلال مزايا تنافسية وبيئة عمل داعمة.",
+  
+  // Benefits
+  careersCompetitiveSalary: "راتب تنافسي",
+  careersSalaryDescription: "نقدم حزم تعويضات تنافسية تعترف بمهاراتك وخبراتك ومساهماتك.",
+  careersHealthBenefits: "المزايا الصحية",
+  careersHealthDescription: "تغطية تأمين صحي شاملة لك ولعائلتك، بما في ذلك الطبي والأسنان والرؤية.",
+  careersFlexibleWork: "عمل مرن",
+  careersFlexibleDescription: "ساعات عمل مرنة وخيارات العمل عن بعد لمساعدتك على الحفاظ على توازن صحي بين العمل والحياة.",
+  careersProfessionalDev: "التطوير المهني",
+  careersProfessionalDevDescription: "فرص تعلم مستمرة، بما في ذلك برامج التدريب والشهادات وحضور المؤتمرات.",
+  
+  // Additional Benefits
+  careersAdditionalBenefits: "مزايا إضافية",
+  careersPerformanceBonus: "مكافآت أداء سنوية",
+  careersPaidTimeOff: "إجازات مدفوعة وعطلات",
+  careersRetirementPlan: "خطة ادخار للتقاعد",
+  careersWellnessPrograms: "برامج الصحة واللياقة",
+  
+  // Work Environment
+  careersWorkEnvironment: "بيئة العمل",
+  careersModernWorkspace: "مساحة عمل حديثة وتعاونية",
+  careersTeamBuilding: "أنشطة منتظمة لبناء الفريق",
+  careersDressCode: "قواعد لباس غير رسمية",
+  careersSnacksBeverages: "وجبات خفيفة ومشروبات مجانية",
+  
+  // Employee Stories
+  careersEmployeeStories: "قصص الموظفين",
+  careersHearFromTeam: "اسمع من فريقنا",
+  careersEmployeeExperiences: "يشارك موظفونا تجاربهم في العمل في TNET وما يجعلها مكانًا مميزًا لبناء مسيرة مهنية.",
+  
+  // Job Openings
+  careersOpenPositions: "الوظائف المتاحة",
+  careersCurrentOpportunities: "الفرص الحالية",
+  careersExploreOpenings: "استكشف فرص العمل الحالية لدينا وابحث عن الدور المثالي الذي يناسب مهاراتك وأهدافك المهنية.",
+  careersSearchJobs: "ابحث حسب المسمى الوظيفي أو القسم أو الموقع",
+  careersApplyNow: "تقدم الآن",
+  careersKeyRequirements: "المتطلبات الرئيسية:",
+  careersViewFullJob: "عرض الوصف الوظيفي الكامل",
+  careersNoJobsMatch: "لا توجد وظائف شاغرة تطابق معايير البحث الخاصة بك. يرجى تجربة مصطلح بحث مختلف.",
+  careersViewAllOpenings: "عرض جميع الوظائف",
+  
+  // Application Process
+  careersApplicationProcess: "عملية التقديم",
+  careersHowToJoin: "كيفية الانضمام إلى فريقنا",
+  careersProcessDescription: "تم تصميم عملية التوظيف لدينا لتكون شفافة وفعالة وتركز على إيجاد التناسب المناسب لك ولـ TNET. إليك ما يمكنك توقعه عند التقدم للانضمام إلى فريقنا.",
+  careersStep1Title: "مراجعة الطلب",
+  careersStep1Description: "يقوم فريق التوظيف لدينا بمراجعة طلبك وسيرتك الذاتية لتقييم مؤهلاتك وخبراتك.",
+  careersStep2Title: "المقابلة الأولية",
+  careersStep2Description: "إذا كان ملفك الشخصي يتطابق مع متطلباتنا، فسنحدد موعدًا لمقابلة أولية للتعرف عليك بشكل أفضل.",
+  careersStep3Title: "التقييم التقني",
+  careersStep3Description: "اعتمادًا على الدور، قد يُطلب منك إكمال تقييم تقني أو دراسة حالة لإظهار مهاراتك.",
+  careersStep4Title: "المقابلة النهائية",
+  careersStep4Description: "التقِ بمدير التوظيف وأعضاء الفريق لمناقشة الدور بالتفصيل والتأكد من أنه مناسب للطرفين.",
+  careersStep5Title: "العرض والتأهيل",
+  careersStep5Description: "إذا كنت ناجحًا، ستتلقى عرضًا وتبدأ عملية التأهيل الشاملة لدينا لإعدادك للنجاح.",
+  
+  // No Suitable Positions
+  careersDontSeeMatch: "لا ترى تطابقًا؟",
+  careersAlwaysLookingTalent: "نحن دائمًا نبحث عن المواهب",
+  careersNoPositionMatch: "إذا لم تجد وظيفة تتناسب مع مهاراتك وخبراتك، ولكنك متحمس للتكنولوجيا وتعتقد أنك يمكن أن تكون إضافة قيمة لفريقنا، فنحن نود أن نسمع منك.",
+  careersSubmitResume: "قدم سيرتك الذاتية",
+  
+  // CTA Section
+  careersReadyNextStep: "هل أنت مستعد لاتخاذ الخطوة التالية في حياتك المهنية؟",
+  careersJoinPassionate: "انضم إلى فريقنا من المحترفين المتحمسين وكن جزءًا من شركة تقدر الابتكار والنمو وإحداث فرق من خلال التكنولوجيا."}
 
 const translations: Record<Language, Record<string, string>> = {
   en: enTranslations,
