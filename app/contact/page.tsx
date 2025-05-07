@@ -74,7 +74,7 @@ export default function ContactPage() {
       city: "Sharjah",
       address: "Research Technology and Innovation Park",
       phone: "+1 (351) 227-2277",
-      email: "infotechtnet@gmail.com",
+      email: "contact@tnet.ae",
       hours: "Sunday - Thursday: 9:00 AM - 6:00 PM",
       image: "https://images.unsplash.com/photo-1637987897990-e660edd0af44?q=80&w=3432&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       mapUrl: "https://maps.google.com/?q=Al+Khan+Sharjah+UAE",
@@ -422,7 +422,7 @@ export default function ContactPage() {
             <div>
               <h4 className="font-medium text-red-100">Email</h4>
               <Link href="mailto:info@tnet.com" className="hover:underline">
-                <p>General: infotechtnet@gmail.com                </p>
+                <p>General: contact@tnet.ae                </p>
                 {/* <p>Support: support@tnet.com</p>
                 <p>Sales: sales@tnet.com</p> */}
               </Link>

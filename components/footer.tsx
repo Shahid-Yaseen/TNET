@@ -27,15 +27,18 @@ export default function Footer() {
             </Link>
             <p className="text-sm text-gray-300">{t("footerDescription")}</p>
             <div className={`flex ${direction === "rtl" ? "space-x-reverse" : ""} space-x-4`}>
-              <Link href="https://www.facebook.com/tnet.ae" className="text-gray-400 hover:text-red-500 transition-colors">
+              <Link href="https://www.facebook.com/tnet.ae"  target="_blank"
+            rel="noopener noreferrer"  className="text-gray-400 hover:text-red-500 transition-colors">
                 <Facebook className="h-5 w-5" />
                 <span className="sr-only">Facebook</span>
               </Link>
-              <Link href="https://x.com/tnetinfotech" className="text-gray-400 hover:text-red-500 transition-colors">
+              <Link href="https://x.com/tnetinfotech"  target="_blank"
+            rel="noopener noreferrer" className="text-gray-400 hover:text-red-500 transition-colors">
                 <Twitter className="h-5 w-5" />
                 <span className="sr-only">Twitter</span>
               </Link>
-              <Link href="https://www.instagram.com/tnet.ae/#" className="text-gray-400 hover:text-red-500 transition-colors">
+              <Link href="https://www.instagram.com/tnet.ae/#"  target="_blank"
+            rel="noopener noreferrer" className="text-gray-400 hover:text-red-500 transition-colors">
                 <Instagram className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
               </Link>

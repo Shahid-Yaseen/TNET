@@ -158,7 +158,7 @@ const enTranslations: Record<string, string> = {
     "Innovative technology solutions for modern businesses. We help organizations leverage technology to achieve their goals.",
   address: "United Arab Emirates Sharjah Sharjah Research Technology and innovation park – UAE Block C VL05-153",
   phone: "+1 (351) 227-2277",
-  email: "infotechtnet@gmail.com",
+  email: "contact@tnet.ae",
 
   // Language
   english: "English",
@@ -864,7 +864,7 @@ const arTranslations: Record<string, string> = {
     "حلول تكنولوجية مبتكرة للشركات الحديثة. نساعد المؤسسات على الاستفادة من التكنولوجيا لتحقيق أهدافها.",
   address: "الإمارات العربية المتحدة الشارقة منتزه الشارقة للأبحاث والتكنولوجيا والابتكار - الإمارات العربية المتحدة المبنى C VL05-153",
   phone: "+١ (٣٥١) ٢٢٧-٢٢٧٧",
-  email: "infotechtnet@gmail.com",
+  email: "contact@tnet.ae",
 
   // Language
   english: "English",

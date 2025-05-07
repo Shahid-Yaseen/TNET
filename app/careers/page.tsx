@@ -1,13 +1,11 @@
-
 "use client"
 
 import { useState } from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
-import { ChevronRight, ArrowRight, Search, Heart, Clock, Coffee, Globe, Award, Users } from 'lucide-react'
+import { ChevronRight, Heart, Clock, Coffee, Globe, Award, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { useLanguage } from "@/contexts/language-context"
 
 export default function CareersPage() {
@@ -242,9 +240,7 @@ export default function CareersPage() {
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
               {t("careersJoinTeam")}
             </h1>
-            <p className="text-blue-100 md:text-xl/relaxed">
-              {t("careersBuildCareer")}
-            </p>
+            <p className="text-blue-100 md:text-xl/relaxed">{t("careersBuildCareer")}</p>
             <div className="flex flex-col sm:flex-row gap-3 pt-4 justify-center">
               <Link href="#openings">
                 <Button size="lg" className="bg-white text-brand-700 hover:bg-blue-50">
@@ -279,12 +275,8 @@ export default function CareersPage() {
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-slate-900">
                 {t("careersCultureInnovation")}
               </h2>
-              <p className="text-slate-600 md:text-lg">
-                {t("careersPeopleAsset")}
-              </p>
-              <p className="text-slate-600 md:text-lg">
-                {t("careersDiverseInclusive")}
-              </p>
+              <p className="text-slate-600 md:text-lg">{t("careersPeopleAsset")}</p>
+              <p className="text-slate-600 md:text-lg">{t("careersDiverseInclusive")}</p>
               <div className="pt-4">
                 <Link href="#openings">
                   <Button className="bg-brand-600 hover:bg-brand-700">
@@ -330,9 +322,7 @@ export default function CareersPage() {
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-slate-900">
               {t("careersWhatDrivesUs")}
             </h2>
-            <p className="mt-4 text-slate-600 md:text-xl/relaxed">
-              {t("careersValuesDescription")}
-            </p>
+            <p className="mt-4 text-slate-600 md:text-xl/relaxed">{t("careersValuesDescription")}</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -370,12 +360,8 @@ export default function CareersPage() {
             <div className="inline-block rounded-lg bg-white/10 backdrop-blur-sm px-3 py-1 text-sm text-white mb-4">
               {t("careersBenefitsPerks")}
             </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              {t("careersWhatWeOffer")}
-            </h2>
-            <p className="mt-4 text-blue-100 md:text-xl/relaxed">
-              {t("careersTakingCare")}
-            </p>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">{t("careersWhatWeOffer")}</h2>
+            <p className="mt-4 text-blue-100 md:text-xl/relaxed">{t("careersTakingCare")}</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -458,7 +444,7 @@ export default function CareersPage() {
       </section>
 
       {/* Employee Testimonials */}
-      <section className="py-16 md:py-24 bg-white">
+      {/* <section className="py-16 md:py-24 bg-white">
         <div className="container px-4 md:px-6">
           <motion.div
             className="max-w-3xl mx-auto text-center mb-12"
@@ -511,10 +497,10 @@ export default function CareersPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Job Openings Section */}
-      <section id="openings" className="py-16 md:py-24 bg-slate-50">
+      {/*<section id="openings" className="py-16 md:py-24 bg-slate-50">
         <div className="container px-4 md:px-6">
           <motion.div
             className="max-w-3xl mx-auto text-center mb-12"
@@ -535,7 +521,7 @@ export default function CareersPage() {
           </motion.div>
 
           {/* Search Bar */}
-          <div className="max-w-2xl mx-auto mb-8">
+      {/*</main>    <div className="max-w-2xl mx-auto mb-8">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400" />
               <Input
@@ -549,7 +535,7 @@ export default function CareersPage() {
           </div>
 
           {/* Job Listings */}
-          <div className="space-y-6 max-w-4xl mx-auto">
+      {/* <div className="space-y-6 max-w-4xl mx-auto">
             {filteredJobs.length > 0 ? (
               filteredJobs.map((job) => (
                 <motion.div
@@ -615,7 +601,7 @@ export default function CareersPage() {
           </div>
         </div>
       </section>
-
+*/}
       {/* Application Process */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container px-4 md:px-6">
@@ -646,10 +632,10 @@ export default function CareersPage() {
               <div className="inline-block rounded-lg bg-brand-100 px-3 py-1 text-sm text-brand-800">
                 {t("careersApplicationProcess")}
               </div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-slate-900">{t("careersHowToJoin")}</h2>
-              <p className="text-slate-600 md:text-lg">
-                {t("careersProcessDescription")}
-              </p>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-slate-900">
+                {t("careersHowToJoin")}
+              </h2>
+              <p className="text-slate-600 md:text-lg">{t("careersProcessDescription")}</p>
               <div className="space-y-4 mt-6">
                 <div className="flex items-start gap-4">
                   <div className="bg-brand-600 text-white text-lg font-bold rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">
@@ -657,9 +643,7 @@ export default function CareersPage() {
                   </div>
                   <div>
                     <h3 className="font-bold text-slate-900">{t("careersStep1Title")}</h3>
-                    <p className="text-slate-600">
-                      {t("careersStep1Description")}
-                    </p>
+                    <p className="text-slate-600">{t("careersStep1Description")}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -668,9 +652,7 @@ export default function CareersPage() {
                   </div>
                   <div>
                     <h3 className="font-bold text-slate-900">{t("careersStep2Title")}</h3>
-                    <p className="text-slate-600">
-                      {t("careersStep2Description")}
-                    </p>
+                    <p className="text-slate-600">{t("careersStep2Description")}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -679,9 +661,7 @@ export default function CareersPage() {
                   </div>
                   <div>
                     <h3 className="font-bold text-slate-900">{t("careersStep3Title")}</h3>
-                    <p className="text-slate-600">
-                      {t("careersStep3Description")}
-                    </p>
+                    <p className="text-slate-600">{t("careersStep3Description")}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -690,9 +670,7 @@ export default function CareersPage() {
                   </div>
                   <div>
                     <h3 className="font-bold text-slate-900">{t("careersStep4Title")}</h3>
-                    <p className="text-slate-600">
-                      {t("careersStep4Description")}
-                    </p>
+                    <p className="text-slate-600">{t("careersStep4Description")}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -701,13 +679,190 @@ export default function CareersPage() {
                   </div>
                   <div>
                     <h3 className="font-bold text-slate-900">{t("careersStep5Title")}</h3>
-                    <p className="text-slate-600">
-                      {t("careersStep5Description")}
-                    </p>
+                    <p className="text-slate-600">{t("careersStep5Description")}</p>
                   </div>
                 </div>
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Interview Questions Section */}
+      <section className="py-16 md:py-24 bg-slate-50">
+        <div className="container px-4 md:px-6">
+          <motion.div
+            className="max-w-3xl mx-auto text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <div className="inline-block rounded-lg bg-brand-100 px-3 py-1 text-sm text-brand-800 mb-4">
+              {t("careersInterviewProcess")}
+            </div>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-slate-900">
+              A Culture of Innovation and Growth
+            </h2>
+            <p className="mt-4 text-slate-600 md:text-xl/relaxed">{t("careersInterviewDescription")}</p>
+          </motion.div>
+
+          <div className="max-w-4xl mx-auto bg-white rounded-xl p-8 shadow-md border border-slate-100">
+            <h3 className="text-2xl font-bold text-slate-900 mb-6">What We Ask Our Candidates</h3>
+            <div className="space-y-4">
+              <motion.div
+                className="p-4 border-l-4 border-brand-600 bg-slate-50"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3 }}
+                viewport={{ once: true }}
+              >
+                <p className="text-slate-700">
+                  "Looking ahead, what specific contributions do you envision making at TNET that will directly
+                  contribute to our company's growth?"
+                </p>
+              </motion.div>
+
+              <motion.div
+                className="p-4 border-l-4 border-brand-600 bg-slate-50"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3, delay: 0.1 }}
+                viewport={{ once: true }}
+              >
+                <p className="text-slate-700">
+                  "Beyond your skills and experience, how do you see yourself actively driving growth initiatives and
+                  helping TNET expand its reach and impact?"
+                </p>
+              </motion.div>
+
+              <motion.div
+                className="p-4 border-l-4 border-brand-600 bg-slate-50"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <p className="text-slate-700">
+                  "At TNET, we're focused on growth. What unique strategies or approaches would you bring to the table
+                  to help us achieve our expansion goals?"
+                </p>
+              </motion.div>
+
+              <motion.div
+                className="p-4 border-l-4 border-brand-600 bg-slate-50"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3, delay: 0.3 }}
+                viewport={{ once: true }}
+              >
+                <p className="text-slate-700">
+                  "As a member of the TNET team, what are some key areas where you believe your talents and insights
+                  could be most impactful in fostering the company's growth?"
+                </p>
+              </motion.div>
+
+              <motion.div
+                className="p-4 border-l-4 border-brand-600 bg-slate-50"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                <p className="text-slate-700">
+                  "We value innovative thinking. What are some fresh perspectives or ideas you have that could help TNET
+                  identify new opportunities for growth and development?"
+                </p>
+              </motion.div>
+
+              <motion.div
+                className="p-4 border-l-4 border-brand-600 bg-slate-50"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3, delay: 0.5 }}
+                viewport={{ once: true }}
+              >
+                <p className="text-slate-700">
+                  "How would you collaborate with different teams within TNET to identify and implement strategies that
+                  lead to significant company growth?"
+                </p>
+              </motion.div>
+
+              <motion.div
+                className="p-4 border-l-4 border-brand-600 bg-slate-50"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3, delay: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <p className="text-slate-700">
+                  "Imagine yourself integrated into TNET. What does 'growth' look like to you for our company, and what
+                  role do you see yourself playing in making that vision a reality?"
+                </p>
+              </motion.div>
+
+              <motion.div
+                className="p-4 border-l-4 border-brand-600 bg-slate-50"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3, delay: 0.7 }}
+                viewport={{ once: true }}
+              >
+                <p className="text-slate-700">
+                  "What are your aspirations for TNET's future, and how do you believe your contributions can help us
+                  reach those ambitious goals?"
+                </p>
+              </motion.div>
+
+              <motion.div
+                className="p-4 border-l-4 border-brand-600 bg-slate-50"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3, delay: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <p className="text-slate-700">
+                  "Beyond your immediate responsibilities, how do you see your presence at TNET contributing to a
+                  broader culture of growth and forward momentum?"
+                </p>
+              </motion.div>
+
+              <motion.div
+                className="p-4 border-l-4 border-brand-600 bg-slate-50"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3, delay: 0.9 }}
+                viewport={{ once: true }}
+              >
+                <p className="text-slate-700">
+                  "Can you provide a specific example from your past experience that demonstrates your ability to
+                  contribute to company growth?"
+                </p>
+              </motion.div>
+
+              <motion.div
+                className="p-4 border-l-4 border-brand-600 bg-slate-50"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3, delay: 1.0 }}
+                viewport={{ once: true }}
+              >
+                <p className="text-slate-700">"What metrics would you use to measure your impact on TNET's growth?"</p>
+              </motion.div>
+            </div>
+
+            <div className="mt-8 text-center">
+              <p className="text-slate-600 mb-4">
+                Prepare thoughtful answers to these questions to demonstrate how you can contribute to our growth
+                journey.
+              </p>
+              <Link href="#openings">
+                <Button className="bg-brand-600 hover:bg-brand-700">
+                  {t("careersViewOpenPositions")}
+                  <ChevronRight className={`${direction === "rtl" ? "mr-2 rotate-180" : "ml-2"} h-4 w-4`} />
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -728,9 +883,7 @@ export default function CareersPage() {
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-slate-900 mb-4">
               {t("careersAlwaysLookingTalent")}
             </h2>
-            <p className="text-slate-600 md:text-xl/relaxed mb-8">
-              {t("careersNoPositionMatch")}
-            </p>
+            <p className="text-slate-600 md:text-xl/relaxed mb-8">{t("careersNoPositionMatch")}</p>
             <Link href="/contact">
               <Button size="lg" className="bg-brand-600 hover:bg-brand-700">
                 {t("careersSubmitResume")}
@@ -751,12 +904,8 @@ export default function CareersPage() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              {t("careersReadyNextStep")}
-            </h2>
-            <p className="text-blue-100 md:text-xl/relaxed">
-              {t("careersJoinPassionate")}
-            </p>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">{t("careersReadyNextStep")}</h2>
+            <p className="text-blue-100 md:text-xl/relaxed">{t("careersJoinPassionate")}</p>
             <div className="pt-6">
               <Link href="#openings">
                 <Button size="lg" className="bg-white text-brand-700 hover:bg-blue-50">

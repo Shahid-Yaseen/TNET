@@ -1,3 +1,4 @@
+
 "use client"
 
 import { useLanguage } from "@/contexts/language-context"
@@ -5,7 +6,7 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react"
+import { Mail, Phone, MapPin, Facebook, Twitter, Instagram } from "lucide-react"
 import Link from "next/link"
 
 export default function GetInTouchSection() {
@@ -14,22 +15,25 @@ export default function GetInTouchSection() {
   const contactInfo = [
     {
       icon: <Mail className="h-5 w-5" />,
-      // title: t("email"),
-      value: "infotechtnet@gmail.com",
-      link: "infotechtnet@gmail.com",
+      title: "Email",
+      value: "contact@tnet.ae",
+      link: "mailto:contact@tnet.ae",
     },
     {
       icon: <Phone className="h-5 w-5" />,
-      //  title: t("phone"),
+      title: "Phone",
       value: t("phone"),
-       link: "tel:+1 (351) 227-2277",
+      link: "tel:+1 (351) 227-2277",
+      target: "_blank",
+      rel: "noopener noreferrer",
     },
     {
       icon: <MapPin className="h-5 w-5" />,
-      // title: t("address"),
-      value:
-      t("address"),
+      title: "Address",
+      value: t("address"),
       link: "https://maps.google.com",
+      target: "_blank",
+      rel: "noopener noreferrer",
     },
   ]
 
@@ -49,11 +53,6 @@ export default function GetInTouchSection() {
       name: "Instagram",
       href: "https://www.instagram.com/tnet.ae/#",
     },
-    // {
-    //   icon: <Linkedin className="h-5 w-5" />,
-    //   name: "LinkedIn",
-    //   href: "#",
-    // },
   ]
 
   return (
@@ -192,7 +191,12 @@ export default function GetInTouchSection() {
                   <div className="bg-white/10 backdrop-blur-sm p-3 rounded-full">{item.icon}</div>
                   <div>
                     <h4 className="font-medium text-red-100">{item.title}</h4>
-                    <Link href={item.link} className="hover:underline">
+                    <Link
+                      href={item.link}
+                      target={item.target || undefined}
+                      rel={item.rel || undefined}
+                      className="hover:underline"
+                    >
                       {item.value}
                     </Link>
                   </div>
@@ -209,6 +213,8 @@ export default function GetInTouchSection() {
                       href={social.href}
                       className="bg-white/10 backdrop-blur-sm p-3 rounded-full hover:bg-white/20 transition-colors flex items-center justify-center"
                       aria-label={social.name}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       {social.icon}
                     </Link>
