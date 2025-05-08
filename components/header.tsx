@@ -106,6 +106,9 @@ export default function Header() {
           <Link href="/contact" className="text-sm font-medium hover:text-red-600 transition-colors">
             {t("contact")}
           </Link>
+          <Link href="/services/ai-consultation" className="text-sm font-medium hover:text-red-600 transition-colors">
+           AI Consulatation
+          </Link>
         </nav>
         <div className="hidden md:flex items-center gap-2">
           {/* <LanguageSwitcher /> */}
@@ -165,9 +168,15 @@ export default function Header() {
             <Link href="/contact" className="text-sm font-medium hover:text-red-600 transition-colors">
               {t("contact")}
             </Link>
+            <Link href="/services/ai-consultations" className="text-sm font-medium hover:text-red-600 transition-colors">
+                Ai Consultation
+            </Link>
             <Link href="/contact">
               <Button className="w-full bg-red-600 hover:bg-red-700">{t("getInTouch")}</Button>
             </Link>
+            {/* <Link href="/services/ai-consultation">
+              <Button className="w-full bg-red-600 hover:bg-red-700">AI Consulatation</Button>
+            </Link> */}
           </nav>
         </div>
       )}

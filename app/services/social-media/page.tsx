@@ -271,7 +271,7 @@ export default function SocialMediaPage() {
               poster="/placeholder.svg?key=da908"
             >
               <source
-                src="/banners/ SocialMediaMarketing.mp4"
+                src="/banners/SocialMediaMarketing.mp4"
                 type="video/mp4"
               />
               Your browser does not support the video tag.

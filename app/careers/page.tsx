@@ -1,16 +1,13 @@
 "use client"
-
-import { useState } from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
-import { ChevronRight, Heart, Clock, Coffee, Globe, Award, Users } from "lucide-react"
+import { ChevronRight, Heart, Clock, Coffee, Globe, Award, Users, Zap, Lightbulb, Rocket } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/contexts/language-context"
 
 export default function CareersPage() {
   const { t, direction } = useLanguage()
-  const [searchTerm, setSearchTerm] = useState("")
 
   // Company values
   const values = [
@@ -60,144 +57,6 @@ export default function CareersPage() {
     },
   ]
 
-  // Job openings
-  const jobOpenings = [
-    {
-      id: 1,
-      title: "Senior Web Developer",
-      department: "Technology",
-      location: "Dubai, UAE",
-      type: "Full-time",
-      description:
-        "We're looking for an experienced web developer to join our team and help create innovative web solutions for our clients.",
-      requirements: [
-        "5+ years of experience in web development",
-        "Proficiency in React, Node.js, and modern JavaScript",
-        "Experience with responsive design and mobile-first development",
-        "Strong problem-solving skills and attention to detail",
-      ],
-      link: "/careers/senior-web-developer",
-    },
-    {
-      id: 2,
-      title: "Cybersecurity Specialist",
-      department: "Security",
-      location: "Abu Dhabi, UAE",
-      type: "Full-time",
-      description:
-        "Join our security team to help protect our clients' systems and data from cyber threats through vulnerability assessments and security implementations.",
-      requirements: [
-        "3+ years of experience in cybersecurity",
-        "Knowledge of security frameworks and compliance standards",
-        "Experience with vulnerability assessment tools",
-        "Security certifications (e.g., CISSP, CEH) preferred",
-      ],
-      link: "/careers/cybersecurity-specialist",
-    },
-    {
-      id: 3,
-      title: "Digital Marketing Manager",
-      department: "Marketing",
-      location: "Dubai, UAE",
-      type: "Full-time",
-      description:
-        "Lead our digital marketing efforts to help clients grow their online presence through strategic marketing campaigns and SEO optimization.",
-      requirements: [
-        "4+ years of experience in digital marketing",
-        "Expertise in SEO, SEM, and social media marketing",
-        "Experience with marketing analytics and reporting",
-        "Strong communication and client management skills",
-      ],
-      link: "/careers/digital-marketing-manager",
-    },
-    {
-      id: 4,
-      title: "IT Support Specialist",
-      department: "Technology",
-      location: "Sharjah, UAE",
-      type: "Full-time",
-      description:
-        "Provide technical support to our clients, troubleshooting issues and ensuring their systems run smoothly and efficiently.",
-      requirements: [
-        "2+ years of experience in IT support",
-        "Knowledge of Windows and Linux operating systems",
-        "Experience with networking and hardware troubleshooting",
-        "Strong customer service skills",
-      ],
-      link: "/careers/it-support-specialist",
-    },
-    {
-      id: 5,
-      title: "Project Manager",
-      department: "Operations",
-      location: "Dubai, UAE",
-      type: "Full-time",
-      description:
-        "Oversee the planning, execution, and delivery of client projects, ensuring they are completed on time, within budget, and to the highest standards.",
-      requirements: [
-        "5+ years of experience in project management",
-        "PMP certification or equivalent",
-        "Experience managing technology projects",
-        "Strong leadership and communication skills",
-      ],
-      link: "/careers/project-manager",
-    },
-    {
-      id: 6,
-      title: "UI/UX Designer",
-      department: "Design",
-      location: "Remote",
-      type: "Full-time",
-      description:
-        "Create intuitive and engaging user experiences for web and mobile applications, working closely with our development team to bring designs to life.",
-      requirements: [
-        "3+ years of experience in UI/UX design",
-        "Proficiency in design tools (Figma, Adobe XD, etc.)",
-        "Portfolio demonstrating strong design skills",
-        "Understanding of user-centered design principles",
-      ],
-      link: "/careers/ui-ux-designer",
-    },
-  ]
-
-  // Filter jobs based on search term
-  const filteredJobs = searchTerm
-    ? jobOpenings.filter(
-        (job) =>
-          job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          job.department.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          job.location.toLowerCase().includes(searchTerm.toLowerCase()),
-      )
-    : jobOpenings
-
-  // Employee testimonials
-  const testimonials = [
-    {
-      quote:
-        "Working at TNET has been an incredible journey of growth and learning. The collaborative environment and challenging projects have helped me develop both professionally and personally.",
-      name: "Sarah Ahmed",
-      position: "Senior Web Developer",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=100&h=100&auto=format&fit=crop",
-      years: "3 years at TNET",
-    },
-    {
-      quote:
-        "What I love most about TNET is the culture of innovation. We're encouraged to explore new technologies and approaches, which keeps the work exciting and allows us to deliver cutting-edge solutions to our clients.",
-      name: "Michael Chen",
-      position: "Cybersecurity Specialist",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&h=100&auto=format&fit=crop",
-      years: "2 years at TNET",
-    },
-    {
-      quote:
-        "The leadership at TNET truly values work-life balance. The flexible work arrangements have allowed me to be productive professionally while still having time for my family and personal interests.",
-      name: "Fatima Al-Mansoori",
-      position: "Project Manager",
-      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=100&h=100&auto=format&fit=crop",
-      years: "4 years at TNET",
-    },
-  ]
-
   return (
     <main className="flex-1" dir={direction}>
       {/* Hero Section */}
@@ -242,13 +101,13 @@ export default function CareersPage() {
             </h1>
             <p className="text-blue-100 md:text-xl/relaxed">{t("careersBuildCareer")}</p>
             <div className="flex flex-col sm:flex-row gap-3 pt-4 justify-center">
-              <Link href="#openings">
+              <a href="https://forms.google.com" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-white text-brand-700 hover:bg-blue-50">
-                  {t("careersViewPositions")}
+                  {t("careersApplyNow")}
                   <ChevronRight className={`${direction === "rtl" ? "mr-2 rotate-180" : "ml-2"} h-4 w-4`} />
                 </Button>
-              </Link>
-              <Link href="#culture">
+              </a>
+              <Link href="#why-join">
                 <Button variant="outline" size="lg" className="border-white text-brand-700 hover:bg-white/10">
                   {t("careersOurCulture")}
                 </Button>
@@ -258,10 +117,29 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* Why Join Us Section */}
-      <section id="culture" className="py-16 md:py-24 bg-white">
+      {/* A Culture of Innovation and Growth Section */}
+      <section id="why-join" className="py-16 md:py-24 bg-white overflow-hidden">
         <div className="container px-4 md:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <motion.div
+            className="max-w-3xl mx-auto text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <div className="inline-block rounded-lg bg-brand-100 px-3 py-1 text-sm text-brand-800 mb-4">
+              {t("careersWhyJoin")}
+            </div>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-slate-900">
+              A Culture of Innovation and Growth
+            </h2>
+            <p className="mt-4 text-slate-600 md:text-xl/relaxed">
+              At TNET, we're building a team of forward-thinking individuals who are passionate about driving growth and
+              innovation.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             <motion.div
               className="space-y-6"
               initial={{ opacity: 0, x: -50 }}
@@ -269,21 +147,29 @@ export default function CareersPage() {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <div className="inline-block rounded-lg bg-brand-100 px-3 py-1 text-sm text-brand-800">
-                {t("careersWhyJoin")}
-              </div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-slate-900">
-                {t("careersCultureInnovation")}
-              </h2>
-              <p className="text-slate-600 md:text-lg">{t("careersPeopleAsset")}</p>
-              <p className="text-slate-600 md:text-lg">{t("careersDiverseInclusive")}</p>
-              <div className="pt-4">
-                <Link href="#openings">
-                  <Button className="bg-brand-600 hover:bg-brand-700">
-                    {t("careersExploreOpportunities")}
-                    <ChevronRight className={`${direction === "rtl" ? "mr-2 rotate-180" : "ml-2"} h-4 w-4`} />
-                  </Button>
-                </Link>
+              <h3 className="text-2xl font-bold text-slate-900">What We Look For in Our Team Members</h3>
+              <p className="text-slate-600">
+                We seek individuals who not only bring technical expertise but also a growth mindset and innovative
+                thinking. Our interview process is designed to understand how you approach challenges and contribute to
+                our collective success.
+              </p>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-brand-50 p-4 rounded-lg">
+                  <Lightbulb className="h-6 w-6 text-brand-600 mb-2" />
+                  <h4 className="font-semibold text-slate-900">Innovation</h4>
+                </div>
+                <div className="bg-brand-50 p-4 rounded-lg">
+                  <Rocket className="h-6 w-6 text-brand-600 mb-2" />
+                  <h4 className="font-semibold text-slate-900">Growth</h4>
+                </div>
+                <div className="bg-brand-50 p-4 rounded-lg">
+                  <Users className="h-6 w-6 text-brand-600 mb-2" />
+                  <h4 className="font-semibold text-slate-900">Collaboration</h4>
+                </div>
+                <div className="bg-brand-50 p-4 rounded-lg">
+                  <Zap className="h-6 w-6 text-brand-600 mb-2" />
+                  <h4 className="font-semibold text-slate-900">Impact</h4>
+                </div>
               </div>
             </motion.div>
             <motion.div
@@ -295,14 +181,198 @@ export default function CareersPage() {
             >
               <div className="relative h-[400px] w-full rounded-xl overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?q=80&w=600&h=400&auto=format&fit=crop"
-                  alt="TNET Team"
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&h=400&auto=format&fit=crop"
+                  alt="TNET Team Collaboration"
                   fill
                   className="object-cover"
                 />
               </div>
             </motion.div>
           </div>
+
+          <motion.div
+            className="max-w-4xl mx-auto bg-gradient-to-r from-brand-50 to-slate-50 rounded-xl p-8 shadow-md border border-slate-100 mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">Questions We Ask Our Candidates</h3>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <motion.div className="group" whileHover={{ y: -5 }}>
+                <div className="bg-white rounded-lg p-5 shadow-sm border border-slate-100 h-full transition-all duration-300 group-hover:shadow-md">
+                  <p className="text-slate-700 italic">
+                    "Looking ahead, what specific contributions do you envision making at TNET that will directly
+                    contribute to our company's growth?"
+                  </p>
+                </div>
+              </motion.div>
+
+              <motion.div className="group" whileHover={{ y: -5 }}>
+                <div className="bg-white rounded-lg p-5 shadow-sm border border-slate-100 h-full transition-all duration-300 group-hover:shadow-md">
+                  <p className="text-slate-700 italic">
+                    "Beyond your skills and experience, how do you see yourself actively driving growth initiatives and
+                    helping TNET expand its reach and impact?"
+                  </p>
+                </div>
+              </motion.div>
+
+              <motion.div className="group" whileHover={{ y: -5 }}>
+                <div className="bg-white rounded-lg p-5 shadow-sm border border-slate-100 h-full transition-all duration-300 group-hover:shadow-md">
+                  <p className="text-slate-700 italic">
+                    "At TNET, we're focused on growth. What unique strategies or approaches would you bring to the table
+                    to help us achieve our expansion goals?"
+                  </p>
+                </div>
+              </motion.div>
+
+              <motion.div className="group" whileHover={{ y: -5 }}>
+                <div className="bg-white rounded-lg p-5 shadow-sm border border-slate-100 h-full transition-all duration-300 group-hover:shadow-md">
+                  <p className="text-slate-700 italic">
+                    "As a member of the TNET team, what are some key areas where you believe your talents and insights
+                    could be most impactful in fostering the company's growth?"
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Innovative Thinking",
+                description:
+                  "We value fresh perspectives and ideas that can help TNET identify new opportunities for growth and development.",
+                icon: <Lightbulb className="h-8 w-8" />,
+                color: "from-purple-500 to-indigo-600",
+                question:
+                  "What are some fresh perspectives or ideas you have that could help TNET identify new opportunities for growth and development?",
+              },
+              {
+                title: "Collaborative Approach",
+                description:
+                  "Success comes from working together across different teams to implement strategies that lead to significant company growth.",
+                icon: <Users className="h-8 w-8" />,
+                color: "from-blue-500 to-cyan-600",
+                question:
+                  "How would you collaborate with different teams within TNET to identify and implement strategies that lead to significant company growth?",
+              },
+              {
+                title: "Vision for Growth",
+                description:
+                  "We seek team members who can envision their role in our company's future and contribute to our ambitious goals.",
+                icon: <Rocket className="h-8 w-8" />,
+                color: "from-red-500 to-orange-600",
+                question:
+                  "What are your aspirations for TNET's future, and how do you believe your contributions can help us reach those ambitious goals?",
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                className="relative bg-white rounded-xl p-6 shadow-md border border-slate-100 overflow-hidden group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-5 transition-opacity duration-500 pointer-events-none"></div>
+
+                <div className="relative z-10">
+                  <motion.div
+                    className={`bg-gradient-to-r ${item.color} p-3 rounded-full w-14 h-14 flex items-center justify-center mb-4 text-white`}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    {item.icon}
+                  </motion.div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">{item.title}</h3>
+                  <p className="text-slate-600 mb-4">{item.description}</p>
+
+                  <div className="p-4 bg-slate-50 rounded-lg mt-4 text-sm italic text-slate-700">"{item.question}"</div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            className="mt-12 bg-gradient-to-r from-brand-900 to-purple-900 rounded-2xl p-8 md:p-12 overflow-hidden text-white"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <div className="absolute inset-0 overflow-hidden">
+              <motion.div
+                className="absolute top-0 left-0 w-96 h-96 rounded-full bg-teal-500 opacity-10 blur-3xl"
+                animate={{
+                  x: [0, 50, 0],
+                  y: [0, 30, 0],
+                }}
+                transition={{
+                  duration: 15,
+                  repeat: Number.POSITIVE_INFINITY,
+                  repeatType: "reverse",
+                }}
+              />
+              <motion.div
+                className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-purple-500 opacity-10 blur-3xl"
+                animate={{
+                  x: [0, -50, 0],
+                  y: [0, -30, 0],
+                }}
+                transition={{
+                  duration: 18,
+                  repeat: Number.POSITIVE_INFINITY,
+                  repeatType: "reverse",
+                }}
+              />
+            </div>
+
+            <div className="relative z-10">
+              <h3 className="text-2xl md:text-3xl font-bold mb-6 text-center">Additional Questions We Explore</h3>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-5 border border-white/20">
+                  <p className="text-white">
+                    "Imagine yourself integrated into TNET. What does 'growth' look like to you for our company, and
+                    what role do you see yourself playing in making that vision a reality?"
+                  </p>
+                </div>
+
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-5 border border-white/20">
+                  <p className="text-white">
+                    "Beyond your immediate responsibilities, how do you see your presence at TNET contributing to a
+                    broader culture of growth and forward momentum?"
+                  </p>
+                </div>
+
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-5 border border-white/20">
+                  <p className="text-white">
+                    "Can you provide a specific example from your past experience that demonstrates your ability to
+                    contribute to company growth?"
+                  </p>
+                </div>
+
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-5 border border-white/20">
+                  <p className="text-white">"What metrics would you use to measure your impact on TNET's growth?"</p>
+                </div>
+              </div>
+
+              <div className="mt-8 text-center">
+                <p className="text-blue-100 mb-6">
+                  These questions reflect our commitment to finding team members who are aligned with our growth mindset
+                  and can contribute to our innovative culture.
+                </p>
+                <a href="https://forms.google.com" target="_blank" rel="noopener noreferrer">
+                  <Button className="bg-white text-brand-700 hover:bg-blue-50">
+                    Apply Now
+                    <ChevronRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </a>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -443,165 +513,6 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* Employee Testimonials */}
-      {/* <section className="py-16 md:py-24 bg-white">
-        <div className="container px-4 md:px-6">
-          <motion.div
-            className="max-w-3xl mx-auto text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <div className="inline-block rounded-lg bg-brand-100 px-3 py-1 text-sm text-brand-800 mb-4">
-              {t("careersEmployeeStories")}
-            </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-slate-900">
-              {t("careersHearFromTeam")}
-            </h2>
-            <p className="mt-4 text-slate-600 md:text-xl/relaxed">
-              {t("careersEmployeeExperiences")}
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                className="bg-slate-50 rounded-xl p-6 shadow-md"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
-              >
-                <div className="mb-6">
-                  <p className="text-slate-700 italic">"{testimonial.quote}"</p>
-                </div>
-                <div className="flex items-center">
-                  <div className="relative h-12 w-12 rounded-full overflow-hidden mr-4">
-                    <Image
-                      src={testimonial.image || "/placeholder.svg"}
-                      alt={testimonial.name}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-slate-900">{testimonial.name}</h4>
-                    <p className="text-slate-600 text-sm">{testimonial.position}</p>
-                    <p className="text-brand-600 text-xs">{testimonial.years}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
-      {/* Job Openings Section */}
-      {/*<section id="openings" className="py-16 md:py-24 bg-slate-50">
-        <div className="container px-4 md:px-6">
-          <motion.div
-            className="max-w-3xl mx-auto text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <div className="inline-block rounded-lg bg-brand-100 px-3 py-1 text-sm text-brand-800 mb-4">
-              {t("careersOpenPositions")}
-            </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-slate-900">
-              {t("careersCurrentOpportunities")}
-            </h2>
-            <p className="mt-4 text-slate-600 md:text-xl/relaxed">
-              {t("careersExploreOpenings")}
-            </p>
-          </motion.div>
-
-          {/* Search Bar */}
-      {/*</main>    <div className="max-w-2xl mx-auto mb-8">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400" />
-              <Input
-                type="text"
-                placeholder={t("careersSearchJobs")}
-                className="pl-10 py-6 text-base"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-            </div>
-          </div>
-
-          {/* Job Listings */}
-      {/* <div className="space-y-6 max-w-4xl mx-auto">
-            {filteredJobs.length > 0 ? (
-              filteredJobs.map((job) => (
-                <motion.div
-                  key={job.id}
-                  className="bg-white rounded-xl p-6 shadow-md border border-slate-100"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
-                >
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                    <div>
-                      <h3 className="text-xl font-bold text-slate-900">{job.title}</h3>
-                      <div className="flex flex-wrap gap-2 mt-2">
-                        <span className="bg-brand-100 text-brand-800 text-xs font-medium px-2.5 py-0.5 rounded">
-                          {job.department}
-                        </span>
-                        <span className="bg-slate-100 text-slate-800 text-xs font-medium px-2.5 py-0.5 rounded">
-                          {job.location}
-                        </span>
-                        <span className="bg-slate-100 text-slate-800 text-xs font-medium px-2.5 py-0.5 rounded">
-                          {job.type}
-                        </span>
-                      </div>
-                    </div>
-                    <Link href={job.link} className="mt-4 md:mt-0">
-                      <Button className="bg-brand-600 hover:bg-brand-700">
-                        {t("careersApplyNow")}
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
-                    </Link>
-                  </div>
-                  <p className="text-slate-600 mb-4">{job.description}</p>
-                  <div>
-                    <h4 className="font-semibold text-slate-900 mb-2">{t("careersKeyRequirements")}</h4>
-                    <ul className="space-y-1">
-                      {job.requirements.map((req, index) => (
-                        <li key={index} className="flex items-start gap-2">
-                          <ChevronRight className="h-5 w-5 text-brand-600 flex-shrink-0 mt-0.5" />
-                          <span className="text-slate-600">{req}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="mt-4 text-right">
-                    <Link href={job.link} className="text-brand-600 font-medium hover:underline">
-                      {t("careersViewFullJob")}
-                    </Link>
-                  </div>
-                </motion.div>
-              ))
-            ) : (
-              <div className="text-center py-12">
-                <p className="text-slate-600 text-lg">
-                  {t("careersNoJobsMatch")}
-                </p>
-                <Button className="mt-4 bg-brand-600 hover:bg-brand-700" onClick={() => setSearchTerm("")}>
-                  {t("careersViewAllOpenings")}
-                </Button>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
-*/}
       {/* Application Process */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container px-4 md:px-6">
@@ -683,214 +594,16 @@ export default function CareersPage() {
                   </div>
                 </div>
               </div>
+              <div className="mt-6">
+                <a href="https://forms.google.com" target="_blank" rel="noopener noreferrer">
+                  <Button className="bg-brand-600 hover:bg-brand-700">
+                    {t("careersApplyNow")}
+                    <ChevronRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </a>
+              </div>
             </motion.div>
           </div>
-        </div>
-      </section>
-
-      {/* Interview Questions Section */}
-      <section className="py-16 md:py-24 bg-slate-50">
-        <div className="container px-4 md:px-6">
-          <motion.div
-            className="max-w-3xl mx-auto text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <div className="inline-block rounded-lg bg-brand-100 px-3 py-1 text-sm text-brand-800 mb-4">
-              {t("careersInterviewProcess")}
-            </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-slate-900">
-              A Culture of Innovation and Growth
-            </h2>
-            <p className="mt-4 text-slate-600 md:text-xl/relaxed">{t("careersInterviewDescription")}</p>
-          </motion.div>
-
-          <div className="max-w-4xl mx-auto bg-white rounded-xl p-8 shadow-md border border-slate-100">
-            <h3 className="text-2xl font-bold text-slate-900 mb-6">What We Ask Our Candidates</h3>
-            <div className="space-y-4">
-              <motion.div
-                className="p-4 border-l-4 border-brand-600 bg-slate-50"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3 }}
-                viewport={{ once: true }}
-              >
-                <p className="text-slate-700">
-                  "Looking ahead, what specific contributions do you envision making at TNET that will directly
-                  contribute to our company's growth?"
-                </p>
-              </motion.div>
-
-              <motion.div
-                className="p-4 border-l-4 border-brand-600 bg-slate-50"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.1 }}
-                viewport={{ once: true }}
-              >
-                <p className="text-slate-700">
-                  "Beyond your skills and experience, how do you see yourself actively driving growth initiatives and
-                  helping TNET expand its reach and impact?"
-                </p>
-              </motion.div>
-
-              <motion.div
-                className="p-4 border-l-4 border-brand-600 bg-slate-50"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                <p className="text-slate-700">
-                  "At TNET, we're focused on growth. What unique strategies or approaches would you bring to the table
-                  to help us achieve our expansion goals?"
-                </p>
-              </motion.div>
-
-              <motion.div
-                className="p-4 border-l-4 border-brand-600 bg-slate-50"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.3 }}
-                viewport={{ once: true }}
-              >
-                <p className="text-slate-700">
-                  "As a member of the TNET team, what are some key areas where you believe your talents and insights
-                  could be most impactful in fostering the company's growth?"
-                </p>
-              </motion.div>
-
-              <motion.div
-                className="p-4 border-l-4 border-brand-600 bg-slate-50"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.4 }}
-                viewport={{ once: true }}
-              >
-                <p className="text-slate-700">
-                  "We value innovative thinking. What are some fresh perspectives or ideas you have that could help TNET
-                  identify new opportunities for growth and development?"
-                </p>
-              </motion.div>
-
-              <motion.div
-                className="p-4 border-l-4 border-brand-600 bg-slate-50"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.5 }}
-                viewport={{ once: true }}
-              >
-                <p className="text-slate-700">
-                  "How would you collaborate with different teams within TNET to identify and implement strategies that
-                  lead to significant company growth?"
-                </p>
-              </motion.div>
-
-              <motion.div
-                className="p-4 border-l-4 border-brand-600 bg-slate-50"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.6 }}
-                viewport={{ once: true }}
-              >
-                <p className="text-slate-700">
-                  "Imagine yourself integrated into TNET. What does 'growth' look like to you for our company, and what
-                  role do you see yourself playing in making that vision a reality?"
-                </p>
-              </motion.div>
-
-              <motion.div
-                className="p-4 border-l-4 border-brand-600 bg-slate-50"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.7 }}
-                viewport={{ once: true }}
-              >
-                <p className="text-slate-700">
-                  "What are your aspirations for TNET's future, and how do you believe your contributions can help us
-                  reach those ambitious goals?"
-                </p>
-              </motion.div>
-
-              <motion.div
-                className="p-4 border-l-4 border-brand-600 bg-slate-50"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.8 }}
-                viewport={{ once: true }}
-              >
-                <p className="text-slate-700">
-                  "Beyond your immediate responsibilities, how do you see your presence at TNET contributing to a
-                  broader culture of growth and forward momentum?"
-                </p>
-              </motion.div>
-
-              <motion.div
-                className="p-4 border-l-4 border-brand-600 bg-slate-50"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.9 }}
-                viewport={{ once: true }}
-              >
-                <p className="text-slate-700">
-                  "Can you provide a specific example from your past experience that demonstrates your ability to
-                  contribute to company growth?"
-                </p>
-              </motion.div>
-
-              <motion.div
-                className="p-4 border-l-4 border-brand-600 bg-slate-50"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 1.0 }}
-                viewport={{ once: true }}
-              >
-                <p className="text-slate-700">"What metrics would you use to measure your impact on TNET's growth?"</p>
-              </motion.div>
-            </div>
-
-            <div className="mt-8 text-center">
-              <p className="text-slate-600 mb-4">
-                Prepare thoughtful answers to these questions to demonstrate how you can contribute to our growth
-                journey.
-              </p>
-              <Link href="#openings">
-                <Button className="bg-brand-600 hover:bg-brand-700">
-                  {t("careersViewOpenPositions")}
-                  <ChevronRight className={`${direction === "rtl" ? "mr-2 rotate-180" : "ml-2"} h-4 w-4`} />
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* No Suitable Positions Section */}
-      <section className="py-16 md:py-24 bg-slate-50">
-        <div className="container px-4 md:px-6">
-          <motion.div
-            className="max-w-3xl mx-auto text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <div className="inline-block rounded-lg bg-brand-100 px-3 py-1 text-sm text-brand-800 mb-4">
-              {t("careersDontSeeMatch")}
-            </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-slate-900 mb-4">
-              {t("careersAlwaysLookingTalent")}
-            </h2>
-            <p className="text-slate-600 md:text-xl/relaxed mb-8">{t("careersNoPositionMatch")}</p>
-            <Link href="/contact">
-              <Button size="lg" className="bg-brand-600 hover:bg-brand-700">
-                {t("careersSubmitResume")}
-                <ChevronRight className={`${direction === "rtl" ? "mr-2 rotate-180" : "ml-2"} h-4 w-4`} />
-              </Button>
-            </Link>
-          </motion.div>
         </div>
       </section>
 
@@ -907,12 +620,12 @@ export default function CareersPage() {
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">{t("careersReadyNextStep")}</h2>
             <p className="text-blue-100 md:text-xl/relaxed">{t("careersJoinPassionate")}</p>
             <div className="pt-6">
-              <Link href="#openings">
+              <a href="https://forms.google.com" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-white text-brand-700 hover:bg-blue-50">
-                  {t("careersViewPositions")}
+                  {t("careersApplyNow")}
                   <ChevronRight className={`${direction === "rtl" ? "mr-2 rotate-180" : "ml-2"} h-4 w-4`} />
                 </Button>
-              </Link>
+              </a>
             </div>
           </motion.div>
         </div>

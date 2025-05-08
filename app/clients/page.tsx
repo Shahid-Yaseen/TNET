@@ -196,12 +196,12 @@ export default function ClientsPage() {
             </h1>
             <p className="text-blue-100 md:text-xl/relaxed">{t("discoverHowWeHelped")}</p>
             <div className="flex flex-col sm:flex-row gap-3 pt-4 justify-center">
-              <Link href="#case-studies">
+              {/* <Link href="#case-studies">
                 <Button size="lg" className="bg-white text-brand-700 hover:bg-blue-50">
                   {t("viewSuccessStories")}
                   <ChevronRight className={`${direction === "rtl" ? "mr-2 rotate-180" : "ml-2"} h-4 w-4`} />
                 </Button>
-              </Link>
+              </Link> */}
               <Link href="/contact">
                 <Button variant="outline" size="lg" className="border-white text-brand-700 hover:bg-white/10">
                   {t("becomeOurClient")}
@@ -314,7 +314,7 @@ export default function ClientsPage() {
       </section>
 
       {/* Case Studies Section */}
-      <section id="case-studies" className="py-16 md:py-24 bg-white">
+      {/* <section id="case-studies" className="py-16 md:py-24 bg-white">
         <div className="container px-4 md:px-6">
           <motion.div
             className="max-w-3xl mx-auto text-center mb-12"
@@ -386,7 +386,7 @@ export default function ClientsPage() {
             </Link>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* Industries Section */}
       <section className="py-16 md:py-24 bg-slate-50">

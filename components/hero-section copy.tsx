@@ -14,59 +14,28 @@ export default function HeroSection() {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false)
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([])
-  // const serviceCategories = [
-   
-  //   {
-  //     title: t("consulting"),
-  //     href: "/services/consulting",
-  //   },
-  //   {
-  //     title: t("it"),
-  //     href: ,
-  //   },
-  //   {
-  //     title: t("security"),
-  //     href: ,
-  //   },
-  //   {
-  //     title: t("socialMedia"),
-  //     href: ,
-  //   },
-  //   {
-  //     title: t("seo"),
-  //     href: "/services/seo",
-  //   },
-  //   {
-  //     title: t("vulnerability"),
-  //     href: "/services/vulnerability",
-  //   },
-  //   {
-  //     title: t("webDesign"),
-  //     href: ,
-  //   },
-  // ]
+
   // Define the videos array with service paths
   const videos = [
     {
       src: "/banners/HomePage.mp4",
       poster: "/placeholder.svg?key=service3",
-       label: "AI Consulatation",
-      path: "/services/ai-consultation",
+       label: "Discover",
+      path: "/services/cloud-services",
     },
     {
       src: "/banners/SocialMediaMarketing.mp4",
       poster: "/placeholder.svg?key=service1",
       label: 'Skyrocket your brand with our Social Media Marketing!',
       // label: t("webDevelopment"),
-      path:"/services/social-media",
+      path: "/services/web-development",
     },
     {
       src: "/banners/AccountingBookingPage.mp4",
       poster: "/placeholder.svg?key=service2",
       label: "Accurate Books, Confident Business",
       // label: t("mobileDevelopment"),
-      path: "/services/accounting",
-      
+      path: "/services/mobile-development",
     },
     
     {
@@ -74,21 +43,21 @@ export default function HeroSection() {
       poster: "/placeholder.svg?key=service4",
       label: 'The Future is Intelligent. Discover AI',
       // label: t("aiSolutions"),
-      path: "/services/it",
+      path: "/services/ai-solutions",
     },
     {
       src: "/banners/survilance.mp4",
       poster: "/placeholder.svg?key=service5",
       label: 'Secure Your World. Surveillance Solutions',
       // label: t("cyberSecurity"),
-      path: "/services/security",
+      path: "/services/cyber-security",
     },
     {
       src: "/banners/WebDesign.mp4",
       poster: "/placeholder.svg?key=service6",
       label: 'AI Web Design: Create Beyond Imagination',
       // label: t("dataAnalytics"),
-      path: "/services/web-design",
+      path: "/services/data-analytics",
     },
   ]
 
@@ -358,10 +327,74 @@ export default function HeroSection() {
       </div>
 
       {/* Mobile text container - positioned at bottom */}
-      
+      <div className="absolute bottom-0 left-0 right-0 z-30 px-4 pb-8 md:hidden">
+        <motion.div
+          className="space-y-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1 text-sm backdrop-blur-sm">
+            {t("welcomeToTnet")}
+          </div>
+          <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl">Innovative Solutions</h1>
+          {/* <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl">{t("innovativeSolutions")}</h1> */}
+          <div className="flex flex-col sm:flex-row gap-3 pt-4">
+            <Link href="/contact">
+              <Button size="lg" className="bg-white text-red-700 hover:bg-red-50">
+                {t("getStarted")}
+                <ChevronRight className={`${direction === "rtl" ? "mr-2 rotate-180" : "ml-2"} h-4 w-4`} />
+              </Button>
+            </Link>
+            <Link href="#services">
+              <Button variant="outline" size="lg" className="border-white text-brand-700 hover:bg-white/10">
+                {t("exploreServices")}
+              </Button>
+            </Link>
+          </div>
+        </motion.div>
+      </div>
 
       {/* Desktop text container */}
-     
+      <div className="container px-4 md:px-6 relative z-30 h-full hidden md:flex flex-col justify-center">
+        <div className="flex flex-row items-center gap-12">
+          <motion.div
+            className="flex-1 space-y-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1 text-sm backdrop-blur-sm">
+              {t("welcomeToTnet")}
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter">Innovative Solutions</h1>
+            {/* <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter">{t("innovativeSolutions")}</h1> */}
+            <p className="text-red-100 md:text-xl/relaxed">{t("heroDescription")}</p>
+            <div className="flex flex-row gap-3 pt-4">
+              <Link href="/contact">
+                <Button size="lg" className="bg-white text-red-700 hover:bg-red-50">
+                  {t("getStarted")}
+                  <ChevronRight className={`${direction === "rtl" ? "mr-2 rotate-180" : "ml-2"} h-4 w-4`} />
+                </Button>
+              </Link>
+              <Link href="#services">
+                <Button variant="outline" size="lg" className="border-white text-brand-700 hover:bg-white/10">
+                  {t("exploreServices")}
+                </Button>
+              </Link>
+            </div>
+          </motion.div>
+          <motion.div
+            className="flex-1 relative"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            {/* This div is kept for spacing and layout purposes */}
+            <div className="relative h-[400px] lg:h-[500px] w-full opacity-0"></div>
+          </motion.div>
+        </div>
+      </div>
     </section>
   )
 }
