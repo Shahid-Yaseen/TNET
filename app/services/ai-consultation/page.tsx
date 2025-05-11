@@ -4,8 +4,7 @@ import type React from "react"
 
 import { useState, useRef, useEffect } from "react"
 import { motion } from "framer-motion"
-import { generateText } from "ai"
-import { openai } from "@ai-sdk/openai"
+import { GoogleGenerativeAI } from "@google/generative-ai" // Using official Google SDK
 import {
   MessageSquare,
   Code,
@@ -24,15 +23,27 @@ import {
   Laptop,
   Search,
   AlertTriangle,
+  ExternalLink,
+  ThumbsUp,
+  ThumbsDown,
+  Copy,
+  Check,
 } from "lucide-react"
-import { useLanguage } from "@/contexts/language-context"
-import { Button } from "@/components/ui/button"
-import { Avatar } from "@/components/ui/avatar"
-import { Textarea } from "@/components/ui/textarea"
-import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button" // Shadcn/UI component
+import { Avatar } from "@/components/ui/avatar" // Shadcn/UI component
+import { Textarea } from "@/components/ui/textarea" // Shadcn/UI component
+import { cn } from "@/lib/utils" // Utility for conditional class names
 import Link from "next/link"
+import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from "@/components/ui/tooltip"
+import ReactMarkdown from "react-markdown"
 
-// Update the ServiceType type to include all your services
+// Mock useLanguage context (replace with your actual implementation if available)
+const useLanguage = () => ({
+  t: (str: string) => str, // Translation function (identity for now)
+  direction: "ltr", // Left-to-right layout
+})
+
+// Define ServiceType for all supported services
 type ServiceType =
   | "web-development"
   | "web-design"
@@ -46,14 +57,17 @@ type ServiceType =
   | "vulnerability"
   | "general"
 
+// Define Message interface for chat messages
 type Message = {
   id: string
   content: string
   role: "user" | "assistant"
   timestamp: Date
   service?: ServiceType
+  feedback?: "positive" | "negative" | null
 }
 
+// Define ServiceInfo interface for service metadata
 interface ServiceInfo {
   type: ServiceType
   label: string
@@ -80,8 +94,9 @@ export default function AIConsultation() {
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const textareaRef = useRef<HTMLTextAreaElement>(null)
   const [showSuggestions, setShowSuggestions] = useState(true)
+  const [copiedMessageId, setCopiedMessageId] = useState<string | null>(null)
 
-  // Update the services array with your specific services
+  // Define services with metadata
   const services: ServiceInfo[] = [
     {
       type: "general",
@@ -173,7 +188,7 @@ export default function AIConsultation() {
     },
   ]
 
-  // Update the suggestions object to include all your services
+  // Define suggestion prompts for each service
   const suggestions = {
     general: [
       "What IT services would benefit my small business?",
@@ -232,12 +247,12 @@ export default function AIConsultation() {
     ],
   }
 
-  // Scroll to bottom of messages
+  // Scroll to the bottom of messages when new messages are added
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
   }, [messages])
 
-  // Auto-resize textarea
+  // Auto-resize textarea based on input content
   useEffect(() => {
     if (textareaRef.current) {
       textareaRef.current.style.height = "auto"
@@ -245,6 +260,7 @@ export default function AIConsultation() {
     }
   }, [input])
 
+  // Handle service selection change
   const handleServiceChange = (service: ServiceType) => {
     setSelectedService(service)
     const serviceInfo = services.find((s) => s.type === service)
@@ -264,6 +280,7 @@ export default function AIConsultation() {
     }
   }
 
+  // Handle clicking a suggestion
   const handleSuggestionClick = (suggestion: string) => {
     setInput(suggestion)
     setShowSuggestions(false)
@@ -272,6 +289,7 @@ export default function AIConsultation() {
     }
   }
 
+  // Handle form submission to generate AI response
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!input.trim() || isLoading) return
@@ -304,17 +322,17 @@ export default function AIConsultation() {
 
       const prompt = `${serviceContext}
 Provide helpful, accurate, and concise information about IT services, focusing on practical advice and solutions.
+Format your response using markdown for better readability. Use bullet points, headings, and bold text where appropriate.
 Previous conversation:
 ${recentMessages}
 
 User: ${input}`
 
-      const { text } = await generateText({
-        model: openai("gpt-4o"),
-        prompt: prompt,
-        temperature: 0.7,
-        maxTokens: 500,
-      })
+      // Initialize Google Generative AI
+      const genAI = new GoogleGenerativeAI("AIzaSyCpYQSUiJY91Zbn1_MUB43u5AwXoV5cTao")
+      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" }) // Using gemini-1.5-flash for broader access
+      const result = await model.generateContent(prompt)
+      const text = await result.response.text()
 
       const aiMessage: Message = {
         id: `assistant-${Date.now()}`,
@@ -327,7 +345,6 @@ User: ${input}`
       setMessages((prev) => [...prev, aiMessage])
     } catch (error) {
       console.error("Error generating response:", error)
-
       const errorMessage: Message = {
         id: `error-${Date.now()}`,
         content: "I'm sorry, I encountered an error while processing your request. Please try again later.",
@@ -335,13 +352,13 @@ User: ${input}`
         timestamp: new Date(),
         service: selectedService,
       }
-
       setMessages((prev) => [...prev, errorMessage])
     } finally {
       setIsLoading(false)
     }
   }
 
+  // Format timestamp for display
   const formatTime = (date: Date) => {
     return new Intl.DateTimeFormat("en-US", {
       hour: "2-digit",
@@ -350,8 +367,33 @@ User: ${input}`
     }).format(date)
   }
 
+  // Handle message feedback
+  const handleFeedback = (messageId: string, feedback: "positive" | "negative") => {
+    setMessages((prev) =>
+      prev.map((msg) => {
+        if (msg.id === messageId) {
+          return { ...msg, feedback }
+        }
+        return msg
+      }),
+    )
+  }
+
+  // Handle copy message to clipboard
+  const handleCopyMessage = (content: string, messageId: string) => {
+    navigator.clipboard.writeText(content)
+    setCopiedMessageId(messageId)
+    setTimeout(() => setCopiedMessageId(null), 2000)
+  }
+
+  // Extract links from message content
+  const extractLinks = (content: string) => {
+    const urlRegex = /(https?:\/\/[^\s]+)/g
+    return content.match(urlRegex) || []
+  }
+
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
+    <div className="flex flex-col min-h-screen bg-gray-50" dir={direction}>
       {/* Header */}
       <header className="bg-gradient-to-r from-red-700 to-navy-900 text-white py-12 px-4">
         <div className="container mx-auto max-w-5xl">
@@ -443,19 +485,20 @@ User: ${input}`
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.3 }}
                       className={cn(
-                        "flex gap-3 max-w-[85%]",
+                        "flex gap-3",
                         message.role === "user" ? "ml-auto flex-row-reverse" : "",
+                        message.role === "user" ? "max-w-[85%]" : "max-w-[90%]",
                       )}
                     >
                       <Avatar
                         className={cn(
-                          "h-8 w-8 rounded-full flex items-center justify-center text-white",
+                          "h-8 w-8 rounded-full flex items-center justify-center text-white shrink-0",
                           message.role === "user" ? "bg-red-600" : "bg-navy-800",
                         )}
                       >
                         {message.role === "user" ? <User className="h-4 w-4" /> : <Bot className="h-4 w-4" />}
                       </Avatar>
-                      <div>
+                      <div className="w-full">
                         <div
                           className={cn(
                             "rounded-2xl px-4 py-2.5 shadow-sm",
@@ -464,9 +507,104 @@ User: ${input}`
                               : "bg-white rounded-tl-none",
                           )}
                         >
-                          <p className="text-sm">{message.content}</p>
+                          {message.role === "assistant" ? (
+                            <div className="prose prose-sm max-w-none dark:prose-invert">
+                              <ReactMarkdown>{message.content}</ReactMarkdown>
+                            </div>
+                          ) : (
+                            <p className="text-sm">{message.content}</p>
+                          )}
+
+                          {/* Links extracted from message */}
+                          {message.role === "assistant" && extractLinks(message.content).length > 0 && (
+                            <div className="mt-2 pt-2 border-t border-gray-100">
+                              <p className="text-xs font-medium text-gray-500 mb-1">Helpful Links:</p>
+                              <div className="flex flex-wrap gap-2">
+                                {extractLinks(message.content).map((link, index) => (
+                                  <a
+                                    key={index}
+                                    href={link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-1 text-xs bg-gray-100 hover:bg-gray-200 text-blue-600 px-2 py-1 rounded-md transition-colors"
+                                  >
+                                    <ExternalLink className="h-3 w-3" />
+                                    Resource {index + 1}
+                                  </a>
+                                ))}
+                              </div>
+                            </div>
+                          )}
                         </div>
-                        <p className="text-xs text-gray-500 mt-1">{formatTime(message.timestamp)}</p>
+                        <div className="flex items-center justify-between mt-1">
+                          <p className="text-xs text-gray-500">{formatTime(message.timestamp)}</p>
+
+                          {message.role === "assistant" && (
+                            <div className="flex items-center gap-1">
+                              <TooltipProvider>
+                                <Tooltip>
+                                  <TooltipTrigger asChild>
+                                    <button
+                                      onClick={() => handleCopyMessage(message.content, message.id)}
+                                      className="p-1 text-gray-400 hover:text-gray-600 rounded-full transition-colors"
+                                    >
+                                      {copiedMessageId === message.id ? (
+                                        <Check className="h-3.5 w-3.5" />
+                                      ) : (
+                                        <Copy className="h-3.5 w-3.5" />
+                                      )}
+                                    </button>
+                                  </TooltipTrigger>
+                                  <TooltipContent>
+                                    <p>{copiedMessageId === message.id ? "Copied!" : "Copy message"}</p>
+                                  </TooltipContent>
+                                </Tooltip>
+                              </TooltipProvider>
+
+                              <TooltipProvider>
+                                <Tooltip>
+                                  <TooltipTrigger asChild>
+                                    <button
+                                      onClick={() => handleFeedback(message.id, "positive")}
+                                      className={cn(
+                                        "p-1 rounded-full transition-colors",
+                                        message.feedback === "positive"
+                                          ? "text-green-500"
+                                          : "text-gray-400 hover:text-gray-600",
+                                      )}
+                                    >
+                                      <ThumbsUp className="h-3.5 w-3.5" />
+                                    </button>
+                                  </TooltipTrigger>
+                                  <TooltipContent>
+                                    <p>Helpful</p>
+                                  </TooltipContent>
+                                </Tooltip>
+                              </TooltipProvider>
+
+                              <TooltipProvider>
+                                <Tooltip>
+                                  <TooltipTrigger asChild>
+                                    <button
+                                      onClick={() => handleFeedback(message.id, "negative")}
+                                      className={cn(
+                                        "p-1 rounded-full transition-colors",
+                                        message.feedback === "negative"
+                                          ? "text-red-500"
+                                          : "text-gray-400 hover:text-gray-600",
+                                      )}
+                                    >
+                                      <ThumbsDown className="h-3.5 w-3.5" />
+                                    </button>
+                                  </TooltipTrigger>
+                                  <TooltipContent>
+                                    <p>Not helpful</p>
+                                  </TooltipContent>
+                                </Tooltip>
+                              </TooltipProvider>
+                            </div>
+                          )}
+                        </div>
                       </div>
                     </motion.div>
                   ))}

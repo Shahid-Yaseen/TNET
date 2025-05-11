@@ -50,7 +50,7 @@ export default function HeroSection() {
     {
       src: "/banners/HomePage.mp4",
       poster: "/placeholder.svg?key=service3",
-       label: "AI Consulatation",
+       label: "The Future is Intelligent. Discover A",
       path: "/services/ai-consultation",
     },
     {
@@ -72,7 +72,7 @@ export default function HeroSection() {
     {
       src: "/banners/IT.mp4",
       poster: "/placeholder.svg?key=service4",
-      label: 'The Future is Intelligent. Discover AI',
+      label: 'Future-Proof your Business with Expert IT',
       // label: t("aiSolutions"),
       path: "/services/it",
     },

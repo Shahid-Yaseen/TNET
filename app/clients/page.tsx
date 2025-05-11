@@ -3,46 +3,56 @@
 import { motion } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
-import { ChevronRight, Star, ArrowRight, CheckCircle, Users, Building, Briefcase } from "lucide-react"
+import { ChevronRight, Star, CheckCircle, Users, Building, Briefcase, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/contexts/language-context"
 
 export default function ClientsPage() {
   const { t, direction } = useLanguage()
 
-  // Featured clients - these would be replaced with actual client logos
+  // Updated with your actual clients
   const featuredClients = [
     {
-      name: t("globalInnovations"),
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/320px-Google_2015_logo.svg.png",
+      name: "Sabha Advertising",
+      logo: "/sabha-advertising-logo.png",
+      website: "https://sabhaadv.com/",
+      description: "Creative advertising and marketing solutions for businesses of all sizes.",
+      image: "/images/Sabha.png",
     },
     {
-      name: t("techSolutionsInc"),
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/320px-IBM_logo.svg.png",
+      name: "Knee UAE",
+      logo: "/knee-uae-logo.png",
+      website: "https://knee.ae",
+      description: "Specialized healthcare services focused on knee treatments and rehabilitation.",
+      image: "/images/knee.png",
     },
     {
-      name: t("secureSystemsLtd"),
-      logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+      name: "Aleter UAE",
+      logo: "/generic-abstract-logo.png",
+      website: "https://aleter.ae",
+      description: "Professional services and solutions for businesses in the UAE.",
+      image: "/images/Alter.png",
     },
     {
-      name: t("retailInnovations"),
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/320px-Amazon_logo.svg.png",
+      name: "Noura Al Adala",
+      logo: "/placeholder.svg?height=80&width=160&query=Noura Al Adala logo",
+      website: "https://nouraladala.com/en/",
+      description: "Legal services and consultation for individuals and businesses.",
+      image: "/images/Noura.png",
     },
     {
-      name: t("manufacturingExcellence"),
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/320px-Netflix_2015_logo.svg.png",
+      name: "EBCAD",
+      logo: "/placeholder.svg?height=80&width=160&query=EBCAD logo",
+      website: "https://www.facebook.com/EBCAD/",
+      description: "Educational services and professional development programs.",
+      image: "/images/EBCAD.png",
     },
     {
-      name: t("healthcarePartners"),
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/HP_logo_2012.svg/320px-HP_logo_2012.svg.png",
-    },
-    {
-      name: t("financialServicesGroup"),
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/320px-Apple_logo_black.svg.png",
-    },
-    {
-      name: t("educationSolutions"),
-      logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg",
+      name: "AllCare",
+      logo: "/placeholder.svg?height=80&width=160&query=AllCare logo",
+      website: "https://www.allcare.ae/",
+      description: "Comprehensive healthcare services and patient care solutions.",
+      image: "/images/allcare.png",
     },
   ]
 
@@ -79,42 +89,6 @@ export default function ClientsPage() {
       company: t("testimonial4Company"),
       image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=100&h=100&auto=format&fit=crop",
       rating: 5,
-    },
-  ]
-
-  // Case studies
-  const caseStudies = [
-    {
-      title: t("healthcareProviderDigitalTransformation"),
-      description: t("healthcareProviderDigitalTransformationDesc"),
-      image: "https://images.unsplash.com/photo-1504813184591-01572f98c85f?q=80&w=500&h=300&auto=format&fit=crop",
-      industry: t("healthcare"),
-      services: [t("webDesign"), t("seo"), t("itInfrastructure")],
-      link: "/case-studies/healthcare-provider",
-    },
-    {
-      title: t("ecommerceSecurityEnhancement"),
-      description: t("ecommerceSecurityEnhancementDesc"),
-      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=500&h=300&auto=format&fit=crop",
-      industry: t("retail"),
-      services: [t("security"), t("vulnerability"), t("itConsulting")],
-      link: "/case-studies/ecommerce-security",
-    },
-    {
-      title: t("manufacturingItUpgradeTitle"),
-      description: t("manufacturingItUpgradeDescription"),
-      image: "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?q=80&w=500&h=300&auto=format&fit=crop",
-      industry: t("manufacturing"),
-      services: [t("itInfrastructure"), t("cloudMigration"), t("itConsulting")],
-      link: "/case-studies/manufacturing-it",
-    },
-    {
-      title: t("financialServicesDigitalMarketing"),
-      description: t("financialServicesDigitalMarketingDesc"),
-      image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=500&h=300&auto=format&fit=crop",
-      industry: t("finance"),
-      services: [t("socialMedia"), t("seo"), t("webDesign")],
-      link: "/case-studies/financial-marketing",
     },
   ]
 
@@ -196,12 +170,6 @@ export default function ClientsPage() {
             </h1>
             <p className="text-blue-100 md:text-xl/relaxed">{t("discoverHowWeHelped")}</p>
             <div className="flex flex-col sm:flex-row gap-3 pt-4 justify-center">
-              {/* <Link href="#case-studies">
-                <Button size="lg" className="bg-white text-brand-700 hover:bg-blue-50">
-                  {t("viewSuccessStories")}
-                  <ChevronRight className={`${direction === "rtl" ? "mr-2 rotate-180" : "ml-2"} h-4 w-4`} />
-                </Button>
-              </Link> */}
               <Link href="/contact">
                 <Button variant="outline" size="lg" className="border-white text-brand-700 hover:bg-white/10">
                   {t("becomeOurClient")}
@@ -212,7 +180,7 @@ export default function ClientsPage() {
         </div>
       </section>
 
-      {/* Trusted By Section */}
+      {/* Featured Clients Showcase - Enhanced Section */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container px-4 md:px-6">
           <motion.div
@@ -231,24 +199,73 @@ export default function ClientsPage() {
             <p className="mt-4 text-slate-600 md:text-xl/relaxed">{t("proudToPartner")}</p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+          {/* Website Showcase Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {featuredClients.map((client, index) => (
               <motion.div
                 key={index}
-                className="flex items-center justify-center p-4"
+                className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 group"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)" }}
               >
-                <Image
-                  src={client.logo || "/placeholder.svg"}
-                  alt={client.name}
-                  width={160}
-                  height={80}
-                  className="max-h-16 w-auto grayscale hover:grayscale-0 transition-all duration-300"
-                />
+                {/* Website Preview */}
+                <div className="relative h-64 w-full overflow-hidden bg-gray-100">
+                  <div className="absolute top-0 left-0 right-0 h-6 bg-gray-200 flex items-center px-2 z-10">
+                    <div className="flex space-x-1.5">
+                      <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                      <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                      <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+                    <div className="text-xs text-gray-600 mx-auto truncate max-w-[200px]">{client.website}</div>
+                  </div>
+                  <div className="absolute inset-0 mt-6 bg-white">
+                    <Image
+                      src={client.image || "/placeholder.svg"}
+                      alt={`${client.name} website`}
+                      fill
+                      className="object-cover object-top transform group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+                      <Link
+                        href={client.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-white text-brand-700 px-4 py-2 rounded-full font-medium flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+                      >
+                        Visit Website
+                        <ExternalLink className="h-4 w-4" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Client Info */}
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-xl font-bold text-slate-900">{client.name}</h3>
+                    {/* <div className="h-10 w-20 relative">
+                      <Image
+                        src={client.logo || "/placeholder.svg"}
+                        alt={`${client.name} logo`}
+                        fill
+                        className="object-contain"
+                      />
+                    </div> */}
+                  </div>
+                  <p className="text-slate-600 mb-4">{client.description}</p>
+                  <Link
+                    href={client.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-brand-600 font-medium hover:underline"
+                  >
+                    {client.website.replace(/(^\w+:|^)\/\//, "").replace(/\/$/, "")}
+                    <ExternalLink className="ml-1 h-4 w-4" />
+                  </Link>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -312,81 +329,6 @@ export default function ClientsPage() {
           </div>
         </div>
       </section>
-
-      {/* Case Studies Section */}
-      {/* <section id="case-studies" className="py-16 md:py-24 bg-white">
-        <div className="container px-4 md:px-6">
-          <motion.div
-            className="max-w-3xl mx-auto text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <div className="inline-block rounded-lg bg-brand-100 px-3 py-1 text-sm text-brand-800 mb-4">
-              {t("successStories")}
-            </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-slate-900">
-              {t("caseStudies")}
-            </h2>
-            <p className="mt-4 text-slate-600 md:text-xl/relaxed">{t("exploreHowWeHelped")}</p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {caseStudies.map((study, index) => (
-              <motion.div
-                key={index}
-                className="bg-white rounded-xl overflow-hidden shadow-md border border-slate-100"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
-              >
-                <div className="relative h-48 w-full">
-                  <Image src={study.image || "/placeholder.svg"} alt={study.title} fill className="object-cover" />
-                  <div className="absolute top-4 left-4 bg-brand-600 text-white text-sm font-medium px-2 py-1 rounded">
-                    {study.industry}
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">{study.title}</h3>
-                  <p className="text-slate-600 mb-4">{study.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {study.services.map((service, i) => (
-                      <span key={i} className="bg-slate-100 text-slate-700 text-xs font-medium px-2.5 py-0.5 rounded">
-                        {service}
-                      </span>
-                    ))}
-                  </div>
-                  <Link
-                    href={study.link}
-                    className="inline-flex items-center text-brand-600 font-medium hover:underline"
-                  >
-                    {t("readCaseStudy")}
-                    <ArrowRight className="ml-1 h-4 w-4" />
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            className="text-center mt-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            <Link href="/case-studies">
-              <Button className="bg-brand-600 hover:bg-brand-700">
-                {t("viewAllCaseStudies")}
-                <ChevronRight className={`${direction === "rtl" ? "mr-2 rotate-180" : "ml-2"} h-4 w-4`} />
-              </Button>
-            </Link>
-          </motion.div>
-        </div>
-      </section> */}
 
       {/* Industries Section */}
       <section className="py-16 md:py-24 bg-slate-50">
