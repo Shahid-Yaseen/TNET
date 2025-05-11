@@ -42,7 +42,7 @@ export default function WorkPage() {
       id: 2,
       title: "Knee UAE",
       description: "Specialized healthcare provider focused on knee treatments and orthopedic services.",
-      image: "/images/knee.png",
+      image: "/images/Knee.png",
       logo: "/images/knee.png",
       category: "healthcare",
       tags: ["Healthcare", "Medical", "Orthopedics"],
