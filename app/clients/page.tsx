@@ -24,7 +24,7 @@ export default function ClientsPage() {
       logo: "/knee-uae-logo.png",
       website: "https://knee.ae",
       description: "Specialized healthcare services focused on knee treatments and rehabilitation.",
-      image: "/images/knee.png",
+      image: "/images/Knee.png",
     },
     {
       name: "Aleter UAE",
