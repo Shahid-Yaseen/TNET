@@ -1,5 +1,8 @@
 import type React from "react"
 import type { Metadata } from "next"
+import { GoogleTagManager } from '@next/third-parties/google'
+import { GoogleAnalytics } from '@next/third-parties/google'
+
 import "./globals.css"
 import { LanguageProvider } from "@/contexts/language-context"
 // Import the ScrollToTop component
@@ -9,8 +12,85 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
+  title: "TNET",
+  description: `accounting software
+bookkeeping services
+web hosting
+domain registration
+IT support
+IT services
+cyber security
+social media marketing agency
+SEO services
+website builder
+small business accounting services
+online bookkeeping for startups
+tax preparation services for UAE
+cloud accounting solutions
+virtual CFO services
+best web hosting for small business
+cheap domain name registration
+VPS hosting providers
+dedicated server hosting
+domain name search tool
+IT consulting for small businesses
+cloud migration services
+network infrastructure consulting
+IT strategy consulting
+managed IT services
+IT solutions for [industry]
+enterprise IT services
+data backup and recovery services
+computer network services
+IT project management
+business security systems
+CCTV installation services
+managed security services provider (MSSP)
+vulnerability scanning services
+penetration testing services
+social media management services
+Facebook advertising agency
+Instagram marketing services
+social media strategy development
+social media content creation
+local SEO services
+e-commerce SEO agency
+keyword research tools
+technical SEO audit
+link building services
+website vulnerability scanner
+network vulnerability assessment
+application security testing
+PCI compliance scanning
+security audit services
+responsive website design company
+small business website design
+e-commerce website development
+affordable website design services
+custom website design
+Dubai
+Abu Dhabi
+Sharjah
+Ajman
+GCC
+Egypt
+Iraq
+Syria
+Lybia
+KSA
+kuwait
+Oman
+Qatar
+مصر
+العراق
+الامارات 
+دبي
+أبو ظبي
+السعودية 
+الكويت 
+قطر
+البحرين 
+عملن`,
   generator: "v0.dev",
 }
 
@@ -55,6 +135,9 @@ export default function RootLayout({
           </Link>
         </LanguageProvider>
       </body>
+      <GoogleTagManager gtmId="GTM-T2LSMJB8" />
+      <GoogleAnalytics gaId="G-CGM6YFRK30" />
+
     </html>
   )
 }

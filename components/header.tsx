@@ -107,7 +107,7 @@ export default function Header() {
             {t("contact")}
           </Link>
           <Link href="/services/ai-consultation" className="text-sm font-medium hover:text-red-600 transition-colors">
-           AI Consulatation
+           AI Consultation
           </Link>
         </nav>
         <div className="hidden md:flex items-center gap-2">
