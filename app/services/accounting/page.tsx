@@ -212,7 +212,7 @@ export default function AccountingPage() {
               poster="/placeholder.svg?key=da908"
             >
               <source
-                src="/banners/AccountingBookingPage.mp4"
+                src="https://ik.imagekit.io/4dh6n2719/AccountingBookingPage.mp4?updatedAt=1749001714204"
                 type="video/mp4"
               />
               Your browser does not support the video tag.

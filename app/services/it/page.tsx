@@ -266,7 +266,7 @@ export default function ITServicesPage() {
               poster="/placeholder.svg?key=da908"
             >
               <source
-                src="/banners/IT.mp4"
+                src="https://ik.imagekit.io/4dh6n2719/IT.mp4?updatedAt=1749001759492"
                 type="video/mp4"
               />
               Your browser does not support the video tag.
