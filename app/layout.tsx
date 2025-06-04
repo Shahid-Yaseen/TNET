@@ -12,7 +12,7 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 
 export const metadata: Metadata = {
-  title: "TNET",
+  title: "TNET A Future Fueled by Innovation",
   description: `accounting software
 bookkeeping services
 web hosting
