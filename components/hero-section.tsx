@@ -48,20 +48,20 @@ export default function HeroSection() {
   // Define the videos array with service paths
   const videos = [
     {
-      src: "/banners/HomePage.mp4",
+      src: "https://ik.imagekit.io/4dh6n2719/HomePage.mp4?updatedAt=1749001721064",
       poster: "/placeholder.svg?key=service3",
        label: "The Future is Intelligent. Discover A",
       path: "/services/ai-consultation",
     },
     {
-      src: "/banners/SocialMediaMarketing.mp4",
+      src: "https://ik.imagekit.io/4dh6n2719/SocialMediaMarketing.mp4?updatedAt=1749001754676",
       poster: "/placeholder.svg?key=service1",
       label: 'Skyrocket your brand with our Social Media Marketing!',
       // label: t("webDevelopment"),
       path:"/services/social-media",
     },
     {
-      src: "/banners/AccountingBookingPage.mp4",
+      src: "https://ik.imagekit.io/4dh6n2719/AccountingBookingPage.mp4?updatedAt=1749001714204",
       poster: "/placeholder.svg?key=service2",
       label: "Accurate Books, Confident Business",
       // label: t("mobileDevelopment"),
@@ -70,21 +70,21 @@ export default function HeroSection() {
     },
     
     {
-      src: "/banners/IT.mp4",
+      src: "https://ik.imagekit.io/4dh6n2719/IT.mp4?updatedAt=1749001759492",
       poster: "/placeholder.svg?key=service4",
       label: 'Future-Proof your Business with Expert IT',
       // label: t("aiSolutions"),
       path: "/services/it",
     },
     {
-      src: "/banners/survilance.mp4",
+      src: "https://ik.imagekit.io/4dh6n2719/survilance.mp4?updatedAt=1749001731648",
       poster: "/placeholder.svg?key=service5",
       label: 'Secure Your World. Surveillance Solutions',
       // label: t("cyberSecurity"),
       path: "/services/security",
     },
     {
-      src: "/banners/WebDesign.mp4",
+      src: "https://ik.imagekit.io/4dh6n2719/WebDesign.mp4?updatedAt=1749001762640",
       poster: "/placeholder.svg?key=service6",
       label: 'AI Web Design: Create Beyond Imagination',
       // label: t("dataAnalytics"),
