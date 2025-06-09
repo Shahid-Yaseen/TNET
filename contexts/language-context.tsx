@@ -157,7 +157,8 @@ const enTranslations: Record<string, string> = {
   footerDescription:
     "Innovative technology solutions for modern businesses. We help organizations leverage technology to achieve their goals.",
   address: "United Arab Emirates Sharjah Sharjah Research Technology and innovation park – UAE Block C VL05-153",
-  phone: "+1 (351) 227-2277",
+  phone: "",
+  // phone: "+1 (351) 227-2277",
   email: "contact@tnet.ae",
 
   // Language

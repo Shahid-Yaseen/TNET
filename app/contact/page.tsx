@@ -73,7 +73,8 @@ export default function ContactPage() {
     {
       city: "Sharjah",
       address: "Research Technology and Innovation Park",
-      phone: "+1 (351) 227-2277",
+      // phone: "+1 (351) 227-2277",
+      phone: "",
       email: "contact@tnet.ae",
       hours: "Sunday - Thursday: 9:00 AM - 6:00 PM",
       image: "https://images.unsplash.com/photo-1637987897990-e660edd0af44?q=80&w=3432&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -402,8 +403,10 @@ export default function ContactPage() {
             <div>
               <h4 className="font-medium text-red-100">Phone</h4>
               <Link href="tel:+97141234567" className="hover:underline">
-                <p>Main: +1 (351) 227-2277
+                <p>Main: 
                 </p>
+                {/* <p>Main: +1 (351) 227-2277
+                </p> */}
                 {/* <p>Support: +971 4 123 4568</p> */}
               </Link>
             </div>
