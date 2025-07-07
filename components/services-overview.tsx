@@ -13,6 +13,7 @@ import {
   Users,
   Wrench,
   ChevronRight,
+  Rocket,
 } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -66,10 +67,10 @@ export default function ServicesOverview() {
   // Updated service descriptions based on uploaded files
   const services = [
     {
-      title: t("accounting"),
-      description: t("accountingDescriptionUpdated"),
-      icon: BarChart,
-      href: "/services/accounting",
+      title: t("advertisement"),
+      description: t("advertisementDescriptionUpdated"),
+      icon: Rocket,
+      href: "/services/advertisement",
     },
     {
       title: t("hosting"),

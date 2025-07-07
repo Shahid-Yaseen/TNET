@@ -65,7 +65,7 @@ export default function HeroSection() {
       poster: "/placeholder.svg?key=service2",
       label: "Accurate Books, Confident Business",
       // label: t("mobileDevelopment"),
-      path: "/services/accounting",
+      path: "/services/advertisement",
       
     },
     

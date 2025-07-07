@@ -13,7 +13,7 @@ import Footer from "@/components/footer"
 
 export const metadata: Metadata = {
   title: "TNET A Future Fueled by Innovation",
-  description: `accounting software
+  description: `advertisement 
 bookkeeping services
 web hosting
 domain registration

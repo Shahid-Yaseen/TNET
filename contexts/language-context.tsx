@@ -79,11 +79,9 @@ const enTranslations: Record<string, string> = {
   viewAllServices: "View All Services",
 
   // Service Categories
-  accounting: "Accounting & Bookkeeping",
-  accountingDescription: "Comprehensive financial management solutions for your business.",
-  accountingDescriptionUpdated:
-    "We provide comprehensive financial management solutions that go beyond compliance, offering insightful analysis and proactive advice to optimize your financial health.",
-  hosting: "Hosting & Domain",
+  advertisement: "Advertisement",
+  advertisementDescription: "Drive Real Impact, Cut Through the Noise. Get Seen. Get Heard.",
+  advertisementDescriptionUpdated:"We craft data-driven, creatively-led advertising strategies that not only capture attention but also drive measurable growth and build lasting brand equity for your business.",  hosting: "Hosting & Domain",
   hostingDescription: "Reliable hosting and domain registration services.",
   consulting: "IT Consulting",
   consultingDescription: "Strategic guidance to optimize your technology investments.",

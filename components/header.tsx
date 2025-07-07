@@ -25,8 +25,8 @@ export default function Header() {
   // Service categories that match the ones in services-overview.tsx
   const serviceCategories = [
     {
-      title: t("accounting"),
-      href: "/services/accounting",
+      title: "Advertisement",
+      href: "/services/advertisement",
     },
     {
       title: t("hosting"),

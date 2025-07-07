@@ -56,14 +56,14 @@ export default function TestimonialsSection() {
         company: "Retail Innovations",
         imageSrc: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=3461&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
-      {
-        quote:
-          "The accounting software implementation by TNET has streamlined our financial processes and saved us countless hours each month. Their support team is always responsive.",
-        author: "Robert Kim",
-        position: "CFO",
-        company: "Manufacturing Excellence",
-        imageSrc: "https://images.unsplash.com/photo-1560787313-5dff3307e257?q=80&w=3687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      },
+{
+  quote:
+    "Tnet's team completely transformed our digital presence. Their creative strategy didn't just get us seen—it got us results. Our engagement and lead quality have skyrocketed. They're more than an agency; they're a true growth partner.",
+  author: "Sarah Chen",
+  position: "Marketing Director",
+  company: "Nexus Tech",
+  imageSrc: "https://images.unsplash.com/photo-1560787313-5dff3307e257?q=80&w=3687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+}
     ],
     ar: [
       {

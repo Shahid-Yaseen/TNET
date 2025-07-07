@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
-import { ChevronRight } from "lucide-react"
+import { ChevronRight, Rocket } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/contexts/language-context"
@@ -15,11 +15,11 @@ export default function ServicesPage() {
   // Service categories with icons
   const services = [
     {
-      title: t("accounting"),
-      description: t("accountingDescriptionUpdated"),
-      icon: BarChart,
-      href: "/services/accounting",
-      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=500&h=300&auto=format&fit=crop",
+      title: "Advertisement",
+      description: t("advertisementDescriptionUpdated"),
+      icon: Rocket,
+      href: "/services/advertisement",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: t("hosting"),

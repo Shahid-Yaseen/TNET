@@ -79,8 +79,8 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-red-500">{t("services")}</h3>
             <div className="w-12 h-0.5 bg-red-600 rounded-full"></div>
             <nav className="flex flex-col space-y-2">
-              <Link href="/services/accounting" className="text-gray-300 hover:text-red-500 transition-colors">
-                {t("accounting")}
+              <Link href="/services/advertisement" className="text-gray-300 hover:text-red-500 transition-colors">
+                Advertisement
               </Link>
               <Link href="/services/hosting" className="text-gray-300 hover:text-red-500 transition-colors">
                 {t("hosting")}

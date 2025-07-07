@@ -28,6 +28,7 @@ import {
   ThumbsDown,
   Copy,
   Check,
+  Rocket,
 } from "lucide-react"
 import { Button } from "@/components/ui/button" // Shadcn/UI component
 import { Avatar } from "@/components/ui/avatar" // Shadcn/UI component
@@ -49,7 +50,7 @@ type ServiceType =
   | "web-design"
   | "mobile-development"
   | "cloud-services"
-  | "accounting-bookkeeping"
+  | "advertisement"
   | "hosting"
   | "it"
   | "security"
@@ -139,10 +140,10 @@ export default function AIConsultation() {
       bgColor: "bg-sky-100",
     },
     {
-      type: "accounting-bookkeeping",
-      label: "Accounting & Bookkeeping",
-      icon: <Calculator className="h-4 w-4" />,
-      description: "Get guidance on financial management, bookkeeping systems, and accounting practices.",
+      type: "advertisement",
+      label: "Advertisement",
+      icon: <Rocket className="h-4 w-4" />,
+      description: "Ignite Your Digital Presence.",
       color: "text-emerald-500",
       bgColor: "bg-emerald-100",
     },
@@ -215,10 +216,10 @@ export default function AIConsultation() {
       "How can I migrate my on-premise servers to the cloud?",
       "What are the security considerations for cloud storage?",
     ],
-    "accounting-bookkeeping": [
-      "What accounting software is best for a small business?",
-      "How can I streamline my bookkeeping processes?",
-      "What tax considerations should I be aware of for my business?",
+    "advertisement": [
+      "What advertisement Technique is best for a small business?",
+      "How can I streamline my advertisement processes?",
+      "",
     ],
     hosting: [
       "What type of hosting is best for my website?",
